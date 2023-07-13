@@ -7,6 +7,6 @@
 # Installation
 - Unix:
 ```console
-git clone https://github.com/Ilya-Grigoriev/dotfiles
-cp -r dotfiles/* ~
+$ git clone https://github.com/Ilya-Grigoriev/dotfiles
+$ cp -r dotfiles/* ~
 ```
