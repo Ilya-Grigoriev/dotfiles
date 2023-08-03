@@ -1,0 +1,36 @@
+# Work with window
+[[keyboard.bindings]]
+action = "Minimize" # Hide the Alacritty window
+key = "H"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "A"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = 'Q'
+mods = 'Alt'
+
+[[keyboard.bindings]]
+action = "ToggleMaximized"
+key = 'M'
+mods = 'Alt'
+
+# Other
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = 'V'
+mods = 'Alt'
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = 'K'
+mods = 'Alt'
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = 'J'
+mods = 'Alt'
