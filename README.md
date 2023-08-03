@@ -10,6 +10,6 @@
 	- [autojump](https://github.com/wting/autojump)
 # Installation
 - Unix:
-```console
-$ git clone https://github.com/ilya-grigoriev/dotfiles ~/.
+```bash
+git clone https://github.com/ilya-grigoriev/dotfiles ~/.
 ```
