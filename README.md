@@ -1,5 +1,6 @@
 # dotfiles
 # Required components:
+- [alacritty](https://github.com/alacritty/alacritty)
 - [poetry](https://python-poetry.org/)
 - For tmux config:
 	- [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
