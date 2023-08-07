@@ -2,7 +2,7 @@
 [[keyboard.bindings]]
 action = "Minimize" # Hide the Alacritty window
 key = "H"
-mods = "Alt"
+mods = "Control|Alt"
 
 [[keyboard.bindings]]
 action = "CreateNewWindow"
