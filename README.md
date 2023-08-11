@@ -12,5 +12,5 @@
 # Installation
 - Unix:
 ```bash
-git clone https://github.com/ilya-grigoriev/dotfiles ~/.
+git clone git@github.com:ilya-grigoriev/dotfiles.git ~/.
 ```
