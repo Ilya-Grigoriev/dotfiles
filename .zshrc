@@ -6,10 +6,12 @@ plugins=(
     git
     autojump
     zsh-autosuggestions
+    zsh-syntax-highlighting
     poetry
 )
 
 source $ZSH/oh-my-zsh.sh
+source /home/ilia/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Aliases
 alias find_package="sudo pacman -Ss "
