@@ -1,5 +1,6 @@
 # dotfiles
 # Required components:
+- [zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [alacritty](https://github.com/alacritty/alacritty)
 - [poetry](https://python-poetry.org/)
 - For tmux config:
