@@ -1,4 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
+export DOTFILES=$HOME/.config/
 
 ZSH_THEME="robbyrussell"
 
