@@ -9,7 +9,7 @@
 	- [auto-suggestions](https://github.com/zsh-users/zsh-autosuggestions) 
     - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 	- [autojump](https://github.com/wting/autojump)
-- [poetry](https://python-poetry.org/)
+    - [poetry](https://python-poetry.org/)
 # Installation
 - Unix:
 ```bash
