@@ -2,7 +2,6 @@
 # Required components:
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [alacritty](https://github.com/alacritty/alacritty)
-- [poetry](https://python-poetry.org/)
 - For tmux config:
 	- [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
 	- [tmux plugin manager](https://github.com/tmux-plugins/tpm)
@@ -10,6 +9,7 @@
 	- [auto-suggestions](https://github.com/zsh-users/zsh-autosuggestions) 
     - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 	- [autojump](https://github.com/wting/autojump)
+- [poetry](https://python-poetry.org/)
 # Installation
 - Unix:
 ```bash
