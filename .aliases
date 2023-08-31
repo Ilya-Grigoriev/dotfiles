@@ -1,3 +1,4 @@
 alias find_package="sudo pacman -Ss "
 alias install_package="sudo pacman -S "
 alias cls="clear"
+alias nv="nvim"
