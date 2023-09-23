@@ -2,6 +2,7 @@
 # Required components:
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [alacritty](https://github.com/alacritty/alacritty)
+- [delta](https://github.com/dandavison/delta)
 - For tmux config:
 	- [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
 	- [tmux plugin manager](https://github.com/tmux-plugins/tpm)
