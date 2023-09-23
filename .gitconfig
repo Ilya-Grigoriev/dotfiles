@@ -27,4 +27,8 @@
 
 [alias]
     st = status
-    br = branch
+    br = branch --all
+    d = diff
+    ps = push origin main
+    pl = pull origin main
+    c = clone --recursive
