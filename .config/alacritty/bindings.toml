@@ -1,6 +1,6 @@
 # Work with window
 [[keyboard.bindings]]
-action = "Minimize" # Hide the Alacritty window
+action = "Minimize"  # Hide the Alacritty window
 key = "H"
 mods = "Control|Alt"
 
@@ -8,11 +8,6 @@ mods = "Control|Alt"
 action = "CreateNewWindow"
 key = "A"
 mods = "Alt"
-
-[[keyboard.bindings]]
-action = "Quit"
-key = 'Q'
-mods = 'Alt'
 
 [[keyboard.bindings]]
 action = "ToggleMaximized"
