@@ -15,3 +15,5 @@ source $ZSH/oh-my-zsh.sh
 source /home/ilia/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/.aliases
+
+bindkey '\eo' fzf-cd-widget
