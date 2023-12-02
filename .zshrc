@@ -16,5 +16,5 @@ source /home/ilia/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/.aliases
 
-export FZF_ALT_C_COMMAND="fd --type d -H"
+export FZF_ALT_C_COMMAND="fd --type d -H . ~"
 bindkey '\eo' fzf-cd-widget
