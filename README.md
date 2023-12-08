@@ -7,6 +7,7 @@
 - [delta](https://github.com/dandavison/delta)
 - [fzf](https://github.com/junegunn/fzf)
 - [fd](https://github.com/sharkdp/fd)
+- [ranger](https://github.com/ranger/ranger)
 - For tmux config:
   - [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
