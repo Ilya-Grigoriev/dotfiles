@@ -1,13 +1,12 @@
 # dotfiles
 
-# Required components:
+# Components:
 
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [alacritty](https://github.com/alacritty/alacritty)
-- [delta](https://github.com/dandavison/delta)
 - [fzf](https://github.com/junegunn/fzf)
 - [fd](https://github.com/sharkdp/fd)
-- [ranger](https://github.com/ranger/ranger)
+- [nnn](https://github.com/jarun/nnn)
 - For tmux config:
   - [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
