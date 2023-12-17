@@ -189,7 +189,7 @@ exec_always setxkbmap -option "caps:ctrl_modifier"
 
 exec_always title_window_icon on
 
-exec_always feh --bg-fill ~/Изображения/wallpapers/tower-nord.png
+exec_always feh --bg-fill ~/wallpapers/tower-nord.png
 
 for_window [class=".*"] border pixel 3
 
