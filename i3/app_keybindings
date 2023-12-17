@@ -1,0 +1,4 @@
+bindsym $mod+f exec firefox
+bindsym $mod+o exec obsidian
+bindsym $mod+t exec telegram
+bindsym $mod+b exec vieb

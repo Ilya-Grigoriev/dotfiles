@@ -1,0 +1,23 @@
+[layout]
+command=echo "$(xkblayout-state print "%s")"
+interval=1
+
+[battery]
+command=~/.config/i3blocks/scripts/battery.sh
+interval=10
+
+[time]
+command=echo "$(date +%d.%m.%Y) $(date +%T)"
+interval=1
+
+[temp]
+command=bash ~/.config/i3blocks/scripts/temperature.sh
+interval=5
+
+[cpu]
+command=bash ~/.config/i3blocks/scripts/cpu.sh
+interval=5
+
+[volume]
+command=echo "♪: $(amixer sget Master | awk -F"[][]" '/Right:/ { print $2 }')"
+interval=1
