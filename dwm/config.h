@@ -103,7 +103,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-        { MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("~/dwm/scripts/restart.sh")}
+        { ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/dwm/scripts/restart_dwmstatus.sh")},
+        { Mod1Mask,                     XK_Shift_L,  spawn,        SHCMD("~/dwm/scripts/restart_dwmstatus.sh")},
 };
 
 /* button definitions */
