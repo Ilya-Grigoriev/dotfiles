@@ -9,6 +9,7 @@
 - [nnn](https://github.com/jarun/nnn)
 - [vieb](https://github.com/Jelmerro/Vieb)
 - [i3wm](https://github.com/i3/i3)
+- [entr](https://github.com/eradman/entr)
 - For tmux config:
   - [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
