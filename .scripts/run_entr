@@ -1,0 +1,3 @@
+#!/bin/sh
+pkill -f "entr autocompiler_groff"
+echo "$1" | entr -n autocompiler_groff "$1"

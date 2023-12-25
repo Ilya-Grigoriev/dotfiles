@@ -1,0 +1,7 @@
+#!/bin/sh
+filename="$1"
+filename_without_extension=${filename%.*}
+filename_pdf="$filename_without_extension.pdf"
+$(ghighlight "$filename" | pdfmom -Tpdf -Kutf-8 -fNIMB > "$filename_pdf")
+# $(groff -Tpdf -Kutf-8 -fNIMB "$filename" > "$filename_pdf")
+# $(ghighlight "$filename" | groff -Tpdf -Kutf-8 > "$filename_pdf")
