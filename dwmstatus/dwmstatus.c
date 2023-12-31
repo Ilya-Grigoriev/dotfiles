@@ -201,7 +201,7 @@ int
 main(void)
 {
 	char *status;
-	char *avgs;
+    char *vol;
 	char *bat;
 	char *tmmsc;
 	char *t0;
@@ -214,21 +214,22 @@ main(void)
 	}
 
 	for (;;sleep(30)) {
-		avgs = loadavg();
+		// avgs = loadavg();
 		bat = getbattery("/sys/class/power_supply/BAT0");
 		tmmsc = mktimes("%d-%m-%Y %H:%M", tzmoscow);
-		kbmap = execscript("setxkbmap -query | grep layout | cut -d':' -f 2- | tr -d ' '");
+		kbmap = execscript("~/dwmstatus/scripts/keyboard_layout.sh");
+        vol = execscript("~/dwmstatus/scripts/volume.sh");
 		t0 = gettemperature("/sys/devices/virtual/thermal/thermal_zone0", "temp");
 		t1 = gettemperature("/sys/devices/virtual/thermal/thermal_zone1", "temp");
 
-		status = smprintf("| Keyb:%s | Temp:%s|%s | L:%s | Bat:%s | %s |",
-				kbmap, t0, t1, avgs, bat, tmmsc);
+		status = smprintf("| %s | Temp:%s|%s | %s | Bat:%s | %s |",
+				kbmap, t0, t1, vol, bat, tmmsc);
 		setstatus(status);
 
 		free(kbmap);
 		free(t0);
 		free(t1);
-		free(avgs);
+		free(vol);
 		free(bat);
 		free(tmmsc);
 		free(status);
