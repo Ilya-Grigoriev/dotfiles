@@ -23,7 +23,7 @@
   - [i3lock](https://github.com/i3/i3lock)
   - [copyq](https://github.com/hluk/CopyQ)
   - [flameshot](https://github.com/flameshot-org/flameshot)
-  - [xkblayout-state](ttps://github.com/nonpop/xkblayout-state)
+  - [xkblayout-state](https://github.com/nonpop/xkblayout-state)
   - [feh](https://github.com/derf/feh)
 
 # Installation
