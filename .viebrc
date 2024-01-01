@@ -1,0 +1,17 @@
+map ,<Space> <:nohlsearch>
+
+imap <C-k> <Esc>
+
+map <C-p> <:screenshot>
+
+map <A-r> <:reloadconfig>
+
+map <A-m> <:mute>
+
+map <A-n> <:notifications>
+map <A-d> <:downloads>
+
+set cache=none
+
+:marks t https://translate.yandex.com/
+:marks g https://github.com/
