@@ -12,6 +12,7 @@
 - [entr](https://github.com/eradman/entr)
 - [nsxiv](https://github.com/nsxiv/nsxiv)
 - [sent](https://tools.suckless.org/sent/)
+- [urxvt](https://wiki.archlinux.org/title/Rxvt-unicode)
 - For tmux config:
   - [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
