@@ -10,6 +10,8 @@
 - [vieb](https://github.com/Jelmerro/Vieb)
 - [i3wm](https://github.com/i3/i3)
 - [entr](https://github.com/eradman/entr)
+- [nsxiv](https://github.com/nsxiv/nsxiv)
+- [sent](https://tools.suckless.org/sent/)
 - For tmux config:
   - [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
@@ -18,6 +20,8 @@
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   - [autojump](https://github.com/wting/autojump)
   - [poetry](https://python-poetry.org/)
+- For dwm:
+  - [dwmstatus](https://dwm.suckless.org/status_monitor/)
 - For i3wm:
   - [i3blocks](https://github.com/vivien/i3blocks)
   - [i3lock](https://github.com/i3/i3lock)
