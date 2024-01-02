@@ -19,7 +19,7 @@ static int borderpx = 2;
 static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
-char *scroll = NULL;
+char *scroll = "scroll";
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
@@ -228,10 +228,6 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
-static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL };
-static char *copyurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -c", "externalpipe", NULL };
-static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NULL };
-
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
@@ -259,13 +255,8 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_9,           selectscheme,   {.i =  8} },
 	{ MODKEY,               XK_0,           nextscheme,     {.i = +1} },
 	{ MODKEY|ControlMask,   XK_0,           nextscheme,     {.i = -1} },
-    // { MODKEY,               XK_u,           opencopied,     {.v = "chromium"} },
-    // { ControlMask|MODKEY,      XK_l,           copyurl,        {.i =  0} },
-	// { ControlMask|MODKEY,      XK_L,           copyurl,        {.i =  1} },
-    { MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
-	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
-	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
-
+    { MODKEY,               XK_u,           opencopied,     {.v = "chromium"} },
+    { ControlMask|MODKEY,      XK_l,           copyurl,        {.i =  0} },
 };
 
 /*

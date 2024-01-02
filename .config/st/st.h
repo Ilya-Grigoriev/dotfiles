@@ -83,8 +83,6 @@ void draw(void);
 
 void opencopied(const Arg *);
 
-void externalpipe(const Arg *);
-
 void kscrolldown(const Arg *);
 void kscrollup(const Arg *);
 void printscreen(const Arg *);

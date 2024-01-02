@@ -217,8 +217,8 @@ main(void)
 		// avgs = loadavg();
 		bat = getbattery("/sys/class/power_supply/BAT0");
 		tmmsc = mktimes("%d-%m-%Y %H:%M", tzmoscow);
-		kbmap = execscript("~/dwmstatus/scripts/keyboard_layout.sh");
-        vol = execscript("~/dwmstatus/scripts/volume.sh");
+		kbmap = execscript("~/.scripts/keyboard_layout.sh");
+        vol = execscript("~/.scripts/volume.sh");
 		t0 = gettemperature("/sys/devices/virtual/thermal/thermal_zone0", "temp");
 		t1 = gettemperature("/sys/devices/virtual/thermal/thermal_zone1", "temp");
 

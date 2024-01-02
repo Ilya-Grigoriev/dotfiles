@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 7;        /* border pixel of windows */
+static const unsigned int borderpx  = 5;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
@@ -102,14 +102,12 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("~/dwm/scripts/suspend_dwn.sh")   },
-	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("~/dwm/scripts/reboot_system.sh")   },
-	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("~/dwm/scripts/logout_session.sh")   },
-	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/dwm/scripts/poweroff_system.sh")   },
-    { ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/dwm/scripts/restart_dwmstatus.sh")},
-    { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/dwm/scripts/restart_dwmstatus.sh")},
-    { Mod1Mask,                     XK_Up,     spawn,          SHCMD("~/dwm/scripts/change_volume.sh -i") },
-    { Mod1Mask,                     XK_Down,   spawn,          SHCMD("~/dwm/scripts/change_volume.sh -d") },
+	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("~/.scripts/suspend_dwn.sh")   },
+	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("~/.scripts/reboot_system.sh")   },
+	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("~/.scripts/logout_session.sh")   },
+	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/.scripts/poweroff_system.sh")   },
+        { ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.scripts/restart_dwmstatus.sh")},
+        { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.scripts/restart_dwmstatus.sh")},
 };
 
 /* button definitions */
