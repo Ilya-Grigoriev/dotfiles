@@ -35,7 +35,7 @@
 *.color7: #bfbaac
 *.color15: #fdf6e3
 
-URxvt.font: xft:Anonymice Pro Nerd Font Mono:pixelsize=28:antialias=true:autohint=true
+URxvt.font: xft:BlexMono Nerd Font Mono:pixelsize=21:antialias=true:autohint=true
 URxvt.background: #191919
 URxvt.foreground: white
 
