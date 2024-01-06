@@ -59,6 +59,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *termcmd2[]  = { "st", NULL };
+static const char *termcmd3[]  = { "urxvt", NULL };
 static const char *vieb[] = {"vieb", NULL};
 static const char *telegram[] = {"telegram", NULL};
 static const char *obsidian[] = {"obsidian", NULL};
@@ -66,7 +67,7 @@ static const char *obsidian[] = {"obsidian", NULL};
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd2 } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd3 } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = vieb    } },
 	{ Mod1Mask,                     XK_t,      spawn,          {.v = telegram} },
 	{ MODKEY,                       XK_o,      spawn,          {.v = obsidian} },
@@ -102,12 +103,12 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("~/.scripts/suspend_dwn.sh")   },
-	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("~/.scripts/reboot_system.sh")   },
-	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("~/.scripts/logout_session.sh")   },
-	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/.scripts/poweroff_system.sh")   },
-        { ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.scripts/restart_dwmstatus.sh")},
-        { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.scripts/restart_dwmstatus.sh")},
+	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("~/.scripts/suspend_dwn")   },
+	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("~/.scripts/reboot_system")   },
+	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("~/.scripts/logout_session")   },
+	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/.scripts/poweroff_system")   },
+        { ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.scripts/dwmstatus-restart")},
+        { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.scripts/dwmstatus-restart")},
 };
 
 /* button definitions */
