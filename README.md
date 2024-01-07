@@ -18,6 +18,7 @@
 - [flameshot](https://github.com/flameshot-org/flameshot)
 - [xkblayout-state](https://github.com/nonpop/xkblayout-state)
 - [feh](https://github.com/derf/feh)
+- [pass](https://wiki.archlinux.org/title/Pass)
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:
