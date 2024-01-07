@@ -42,10 +42,12 @@ git clone git@github.com:ilya-grigoriev/dotfiles.git ~/.
 # Zsh configuration
 
 - To work well, you need to set `$ZDOTDIR` (from `/etc/zsh/zshenv/`) to `ZDOTDIR=$HOME/.config/zsh`.
+- To history saving work well, you also need to set `$HISTFILE`.
 - Just paste following code:
 
 ```
 export ZDOTDIR=$HOME/.config/zsh
+export HISTFILE=$ZDOTDIR/history
 ```
 
 - All `.zsh*` files need to be moved to `~/.config/zsh`.
