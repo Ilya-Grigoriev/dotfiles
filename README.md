@@ -38,3 +38,14 @@
 ```bash
 git clone git@github.com:ilya-grigoriev/dotfiles.git ~/.
 ```
+
+# Zsh config
+
+- To work well, you need to set `$ZDOTDIR` (from `/etc/zsh/zshenv/`) to `ZDOTDIR=$HOME/.config/zsh`.
+- Just paste following code:
+
+```
+export ZDOTDIR=$HOME/.config/zsh
+```
+
+- All `.zsh*` files need to be moved to `~/.config/zsh`.
