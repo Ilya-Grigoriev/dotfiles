@@ -39,7 +39,7 @@
 git clone git@github.com:ilya-grigoriev/dotfiles.git ~/.
 ```
 
-# Zsh config
+# Zsh configuration
 
 - To work well, you need to set `$ZDOTDIR` (from `/etc/zsh/zshenv/`) to `ZDOTDIR=$HOME/.config/zsh`.
 - Just paste following code:
