@@ -3,7 +3,8 @@
 # Components:
 
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [alacritty](https://github.com/alacritty/alacritty)
+- [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
+- [alacritty](https://github.com/alacritty/alacritty) (using?)
 - [fzf](https://github.com/junegunn/fzf)
 - [fd](https://github.com/sharkdp/fd)
 - [nnn](https://github.com/jarun/nnn)
@@ -13,8 +14,11 @@
 - [nsxiv](https://github.com/nsxiv/nsxiv)
 - [sent](https://tools.suckless.org/sent/)
 - [urxvt](https://wiki.archlinux.org/title/Rxvt-unicode)
+- [copyq](https://github.com/hluk/CopyQ)
+- [flameshot](https://github.com/flameshot-org/flameshot)
+- [xkblayout-state](https://github.com/nonpop/xkblayout-state)
+- [feh](https://github.com/derf/feh)
 - For tmux config:
-  - [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:
   - [auto-suggestions](https://github.com/zsh-users/zsh-autosuggestions)
@@ -26,10 +30,6 @@
 - For i3wm:
   - [i3blocks](https://github.com/vivien/i3blocks)
   - [i3lock](https://github.com/i3/i3lock)
-  - [copyq](https://github.com/hluk/CopyQ)
-  - [flameshot](https://github.com/flameshot-org/flameshot)
-  - [xkblayout-state](https://github.com/nonpop/xkblayout-state)
-  - [feh](https://github.com/derf/feh)
 
 # Installation
 
