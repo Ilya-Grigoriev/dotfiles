@@ -9,3 +9,12 @@ alias mci="sudo make clean install"
 alias sc="sc-im"
 alias tr="trash-put"
 alias fpush="git add . && git commit -am "feat" && git push -u origin main"
+alias bwm="vi .config/bspwm/bspwmrc"
+alias kwm="vi .config/sxhkd/sxhkdrc"
+alias adb='HOME=$ANDROID_HOME adb'
+alias camera='ffplay -f video4linux2 -framerate 30 -video_size hd720 /dev/video0'
+alias camera_rec='ffmpeg -f video4linux2 -input_format mjpeg -i /dev/video0 -framerate 60 -video_size fullhd1080 vds/output.mp4'
+alias rec='ffmpeg \
+-video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 \
+-f pulse -ac 2 -i default \
+out.mp4'
