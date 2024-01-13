@@ -1,1 +1,3 @@
-- Some wallpapers were taken from [Unsplash](https://unsplash.com/).
+- Where wallpaper is taken from:
+    - [Unsplash](https://unsplash.com/).
+    - [Website Alexey Vasilyev](https://alexey-vasilyev.com/my-dear-yakutia-ongoing).
