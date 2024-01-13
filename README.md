@@ -51,7 +51,8 @@ export ZDOTDIR=$HOME/.config/zsh
 export HISTFILE=$ZDOTDIR/history
 ```
 
-# Urxvt configuration
-- To work well, you need to create `/usr/lib/urxvt/perl` folder and move to this config files from [urxvt-perls](https://github.com/xyb3rt/urxvt-perls).
-
 - All `.zsh*` files need to be moved to `~/.config/zsh`.
+
+# Urxvt configuration
+
+- To work well, you need to create `/usr/lib/urxvt/perl` folder and move to this config files from [urxvt-perls](https://github.com/xyb3rt/urxvt-perls).
