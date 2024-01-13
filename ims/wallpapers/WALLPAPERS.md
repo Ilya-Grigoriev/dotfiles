@@ -1,0 +1,1 @@
+- Some wallpapers were taken from [Unsplash](https://unsplash.com/).
