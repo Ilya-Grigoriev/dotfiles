@@ -1,0 +1,29 @@
+[Added Associations]
+inode/directory=org.kde.dolphin.desktop;
+text/markdown=obsidian_obsidian.desktop;
+x-scheme-handler/geo=google-maps-geo-handler.desktop;
+x-scheme-handler/http=kfmclient_html.desktop;
+x-scheme-handler/https=kfmclient_html.desktop;
+x-scheme-handler/mailto=org.kde.kmail2.desktop;
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
+text/x-python=vim.desktop;
+application/octet-stream=vim.desktop;
+
+[Default Applications]
+inode/directory=org.kde.dolphin.desktop;
+text/markdown=obsidian_obsidian.desktop;
+x-scheme-handler/geo=google-maps-geo-handler.desktop;
+x-scheme-handler/http=kfmclient_html.desktop;
+x-scheme-handler/https=kfmclient_html.desktop;
+x-scheme-handler/mailto=org.kde.kmail2.desktop;
+x-scheme-handler/obsidian=obsidian.desktop
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
+x-scheme-handler/x-github-client=github-desktop.desktop
+x-scheme-handler/x-github-desktop-auth=github-desktop.desktop
+x-scheme-handler/postman=Postman.desktop
+text/x-python=vim.desktop
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
+text/csv=sc-usercreated-1.desktop
+image/jpeg=nsxiv.desktop;
+image/png=nsxiv.desktop;
+x-scheme-handler/discord-1176718791388975124=discord-1176718791388975124.desktop
