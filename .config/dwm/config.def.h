@@ -9,13 +9,14 @@ static const char *fonts[]          = { "monospace:size=13" };
 static const char dmenufont[]       = "monospace:size=13";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
+static const char col_purple[]      = "#864AF9";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_purple  },
 };
 
 /* tagging */
@@ -67,7 +68,7 @@ static const char *obsidian[] = {"obsidian", NULL};
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd3 } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd2 } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = vieb    } },
 	{ Mod1Mask,                     XK_t,      spawn,          {.v = telegram} },
 	{ MODKEY,                       XK_o,      spawn,          {.v = obsidian} },
@@ -107,8 +108,10 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("~/.scripts/reboot_system")   },
 	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("~/.scripts/logout_session")   },
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/.scripts/poweroff_system")   },
-        { ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.scripts/dwmstatus-restart")},
-        { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.scripts/dwmstatus-restart")},
+    { ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.scripts/dwmstatus-restart")},
+    { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.scripts/dwmstatus-restart")},
+    { Mod1Mask,                     XK_Up,     spawn,          SHCMD("~/.scripts/change_volume -i && ~/.scripts/dwmstatus-restart")},
+    { Mod1Mask,                     XK_Down,   spawn,          SHCMD("~/.scripts/change_volume -d && ~/.scripts/dwmstatus-restart")},
 };
 
 /* button definitions */
