@@ -1,20 +1,33 @@
-alias find_package="sudo pacman -Ss "
-alias install_package="sudo pacman -S "
+alias pac="sudo pacman"
+
 alias cls="clear"
 alias nv="nvim"
 alias pc="pre-commit"
-alias pac="sudo pacman"
 alias lg="lazygit"
 alias mci="sudo make clean install"
 alias sc="sc-im"
 alias tr="trash-put"
 alias fpush="git add . && git commit -am "feat" && git push -u origin main"
+
 alias bwm="vi .config/bspwm/bspwmrc"
 alias kwm="vi .config/sxhkd/sxhkdrc"
+
 alias adb='HOME=$ANDROID_HOME adb'
 alias cam='ffplay -f video4linux2 -framerate 30 -video_size hd720 /dev/video0'
-alias cam_rec='ffmpeg -f video4linux2 -input_format mjpeg -i /dev/video0 -framerate 60 -video_size fullhd1080 vds/output.mp4'
-alias rec='ffmpeg \
--video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 \
--f pulse -ac 2 -i default \
-vds/out.mp4'
+
+func cam_rec ()
+{
+	mkdir -p vds/sc
+	ffmpeg \
+	-f video4linux2 -input_format mjpeg -i /dev/video0 -framerate 60 -video_size fullhd1080 \
+	 vds/sc/${1}.mp4
+}
+
+func rec ()
+{
+	mkdir -p vds/sc
+	ffmpeg \
+	-video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 \
+	-f pulse -ac 2 -i default \
+	vds/sc/${1}.mp4
+}
