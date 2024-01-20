@@ -20,6 +20,7 @@
 - [feh](https://github.com/derf/feh)
 - [pass](https://wiki.archlinux.org/title/Pass)
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- antiword
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:
