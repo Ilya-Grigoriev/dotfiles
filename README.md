@@ -16,10 +16,10 @@
 - [urxvt](https://wiki.archlinux.org/title/Rxvt-unicode)
 - [copyq](https://github.com/hluk/CopyQ)
 - [flameshot](https://github.com/flameshot-org/flameshot)
-- [xkblayout-state](https://github.com/nonpop/xkblayout-state)
 - [feh](https://github.com/derf/feh)
 - [pass](https://wiki.archlinux.org/title/Pass)
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- [cmus](https://github.com/cmus/cmus)
 - antiword
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
@@ -31,6 +31,7 @@
 - For dwm:
   - [dwmstatus](https://dwm.suckless.org/status_monitor/)
 - For i3wm:
+  - [xkblayout-state](https://github.com/nonpop/xkblayout-state)
   - [i3blocks](https://github.com/vivien/i3blocks)
   - [i3lock](https://github.com/i3/i3lock)
 
