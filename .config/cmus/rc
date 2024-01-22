@@ -1,0 +1,12 @@
+cd ~/sng
+
+set start_view=playlist
+
+colorscheme green
+
+unbind common n
+bind common n player-next
+unbind common b
+bind common b player-prev
+
+toggle shuffle
