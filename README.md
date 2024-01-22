@@ -20,6 +20,7 @@
 - [pass](https://wiki.archlinux.org/title/Pass)
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 - [cmus](https://github.com/cmus/cmus)
+- [glow](https://github.com/charmbracelet/glow)
 - antiword
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
