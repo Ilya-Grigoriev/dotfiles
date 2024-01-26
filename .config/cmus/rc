@@ -9,4 +9,7 @@ bind common n player-next
 unbind common b
 bind common b player-prev
 
+unbind common p
+bind common p player-pause
+
 toggle shuffle
