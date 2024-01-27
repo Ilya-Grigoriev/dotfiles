@@ -5,23 +5,25 @@
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
 - [alacritty](https://github.com/alacritty/alacritty) (using?)
-- [fzf](https://github.com/junegunn/fzf)
-- [fd](https://github.com/sharkdp/fd)
-- [nnn](https://github.com/jarun/nnn)
-- [vieb](https://github.com/Jelmerro/Vieb)
+- [fzf](https://github.com/junegunn/fzf) - tool for finding files/directories
+
+- [fd](https://github.com/sharkdp/fd) - tool for finding files/directories
+- [nnn](https://github.com/jarun/nnn) - file manager in terminal
+- [vieb](https://github.com/Jelmerro/Vieb) - Vi-mode browser
 - [i3wm](https://github.com/i3/i3)
-- [entr](https://github.com/eradman/entr)
-- [nsxiv](https://github.com/nsxiv/nsxiv)
-- [sent](https://tools.suckless.org/sent/)
-- [urxvt](https://wiki.archlinux.org/title/Rxvt-unicode)
-- [copyq](https://github.com/hluk/CopyQ)
-- [flameshot](https://github.com/flameshot-org/flameshot)
-- [feh](https://github.com/derf/feh)
-- [pass](https://wiki.archlinux.org/title/Pass)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- [cmus](https://github.com/cmus/cmus)
-- [glow](https://github.com/charmbracelet/glow)
-- antiword
+- [entr](https://github.com/eradman/entr) - commands automation
+- [nsxiv](https://github.com/nsxiv/nsxiv) - image viewer
+- [sent](https://tools.suckless.org/sent/) - presentation tool
+- [urxvt](https://wiki.archlinux.org/title/Rxvt-unicode) - terminal
+- [copyq](https://github.com/hluk/CopyQ) - clipboard tool
+- [flameshot](https://github.com/flameshot-org/flameshot) - screenshot tool
+- [feh](https://github.com/derf/feh) - wallpaper manager
+- [pass](https://wiki.archlinux.org/title/Pass) - password manager
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) - youtube downloader
+- [cmus](https://github.com/cmus/cmus) - music player
+- [glow](https://github.com/charmbracelet/glow) - markdown viewer
+- [tuir](https://github.com/c4pt0r/tuir) - Reddit browser
+- antiword - graphical Word processor 
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:
