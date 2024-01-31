@@ -14,7 +14,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $HOME/.aliases
+for file in $(ls -d $DOTFILES/aliases/*) ; do
+  if [ -f "$file" ] ; then
+    source "$file"
+  fi
+done
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh

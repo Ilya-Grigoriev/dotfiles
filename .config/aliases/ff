@@ -1,0 +1,18 @@
+alias cam='ffplay -f video4linux2 -framerate 30 -video_size hd720 /dev/video0'
+
+func cam_rec ()
+{
+	mkdir -p vds/sc
+	ffmpeg \
+	-f video4linux2 -input_format mjpeg -i /dev/video0 -framerate 60 -video_size fullhd1080 \
+	 vds/sc/${1}.mp4
+}
+
+func rec ()
+{
+	mkdir -p vds/sc
+	ffmpeg \
+	-video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 \
+	-f pulse -ac 2 -i default \
+	vds/sc/${1}.mp4
+}

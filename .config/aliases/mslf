@@ -1,0 +1,13 @@
+alias pac="sudo pacman"
+alias cls="clear"
+alias pc="pre-commit"
+alias mci="sudo make clean install"
+alias tr="trash-put"
+alias fpush="git add . && git commit -am "feat" && git push -u origin main"
+alias wifi="nmcli --ask con up"
+alias gc="git clone"
+alias dc="deactivate"
+alias sp="source venv/bin/activate"
+
+alias bwm="vi .config/bspwm/bspwmrc"
+alias kwm="vi .config/sxhkd/sxhkdrc"

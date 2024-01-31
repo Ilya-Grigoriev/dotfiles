@@ -1,0 +1,2 @@
+alias yd="yt-dlp -f best*"
+alias ydm="yt-dlp --audio-format best -x --audio-format mp3"
