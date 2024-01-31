@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 6;        /* border pixel of windows */
+static const unsigned int borderpx  = 5;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
@@ -70,7 +70,7 @@ static const char *obsidian[] = {"obsidian", NULL};
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd2 } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd3 } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = vieb    } },
 	{ Mod1Mask,                     XK_t,      spawn,          {.v = telegram} },
 	{ MODKEY,                       XK_o,      spawn,          {.v = obsidian} },
@@ -106,14 +106,14 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("~/.scripts/suspend_dwn")   },
-	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("~/.scripts/reboot_system")   },
-	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("~/.scripts/logout_session")   },
-	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/.scripts/poweroff_system")   },
-    { ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.scripts/dwmstatus-restart")},
-    { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.scripts/dwmstatus-restart")},
-    { Mod1Mask,                     XK_Up,     spawn,          SHCMD("~/.scripts/change_volume -i && ~/.scripts/dwmstatus-restart")},
-    { Mod1Mask,                     XK_Down,   spawn,          SHCMD("~/.scripts/change_volume -d && ~/.scripts/dwmstatus-restart")},
+	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("~/.local/share/scripts/suspend_dwn")   },
+	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("~/.local/share/scripts/reboot_system")   },
+	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("~/.local/share/scripts/logout_session")   },
+	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/.local/share/scripts/poweroff_system")   },
+    { ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart")},
+    { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart")},
+    { Mod1Mask,                     XK_Up,     spawn,          SHCMD("~/.local/share/scripts/change_volume -i && ~/.local/share/scripts/dwmstatus-restart")},
+    { Mod1Mask,                     XK_Down,   spawn,          SHCMD("~/.local/share/scripts/change_volume -d && ~/.local/share/scripts/dwmstatus-restart")},
 };
 
 /* button definitions */

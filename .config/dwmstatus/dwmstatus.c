@@ -3,6 +3,7 @@
  * by 20h
  */
 
+#include <wchar.h>
 #define _BSD_SOURCE
 #include <unistd.h>
 #include <stdio.h>
@@ -207,32 +208,34 @@ main(void)
 	char *t0;
 	char *t1;
 	char *kbmap;
+    char *ram;
 
 	if (!(dpy = XOpenDisplay(NULL))) {
 		fprintf(stderr, "dwmstatus: cannot open display.\n");
 		return 1;
 	}
 
-	for (;;sleep(30)) {
-		// avgs = loadavg();
+	for (;;sleep(10)) {
 		bat = getbattery("/sys/class/power_supply/BAT0");
 		tmmsc = mktimes("%d-%m-%Y %H:%M", tzmoscow);
-		kbmap = execscript("~/.scripts/keyboard_layout.sh");
-        vol = execscript("~/.scripts/volume.sh");
+        vol = execscript("~/.local/share/scripts/volume");
+		kbmap = execscript("~/.local/share/scripts/keyboard_layout");
+        ram = execscript("~/.local/share/scripts/ram");
 		t0 = gettemperature("/sys/devices/virtual/thermal/thermal_zone0", "temp");
 		t1 = gettemperature("/sys/devices/virtual/thermal/thermal_zone1", "temp");
 
-		status = smprintf("| %s | Temp:%s|%s | %s | Bat:%s | %s |",
+		status = smprintf("| %s | T:%s|%s | %s | B:%s | %s |",
 				kbmap, t0, t1, vol, bat, tmmsc);
 		setstatus(status);
 
+        free(vol);
 		free(kbmap);
 		free(t0);
 		free(t1);
-		free(vol);
 		free(bat);
 		free(tmmsc);
 		free(status);
+	/* free(ram); */
 	}
 
 	XCloseDisplay(dpy);
