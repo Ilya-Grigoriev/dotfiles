@@ -6,7 +6,6 @@
 - [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
 - [alacritty](https://github.com/alacritty/alacritty) (using?)
 - [fzf](https://github.com/junegunn/fzf) - tool for finding files/directories
-
 - [fd](https://github.com/sharkdp/fd) - tool for finding files/directories
 - [nnn](https://github.com/jarun/nnn) - file manager in terminal
 - [vieb](https://github.com/Jelmerro/Vieb) - Vi-mode browser
@@ -22,8 +21,11 @@
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) - youtube downloader
 - [cmus](https://github.com/cmus/cmus) - music player
 - [glow](https://github.com/charmbracelet/glow) - markdown viewer
-- [tuir](https://github.com/c4pt0r/tuir) - Reddit browser
-- antiword - graphical Word processor 
+- [tuir](https://github.com/c4pt0r/tuir) - Reddit TUI
+- [antiword](https://linux.die.net/man/1/antiword) - display Word document text
+- [abiword](https://wiki.archlinux.org/title/AbiWord) - Word processor
+- [invidtui](https://github.com/darkhz/invidtui) - YouTube TUI
+- [discordo](https://github.com/ayn2op/discordo) - Discord TUI
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:
