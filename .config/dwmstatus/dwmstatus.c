@@ -217,21 +217,21 @@ main(void)
 
 	for (;;sleep(10)) {
 		bat = getbattery("/sys/class/power_supply/BAT0");
-		tmmsc = mktimes("%d-%m-%Y %H:%M", tzmoscow);
+		tmmsc = mktimes("%d.%m.%y %H:%M", tzmoscow);
         vol = execscript("~/.local/share/scripts/volume");
 		kbmap = execscript("~/.local/share/scripts/keyboard_layout");
         ram = execscript("~/.local/share/scripts/ram");
-		t0 = gettemperature("/sys/devices/virtual/thermal/thermal_zone0", "temp");
-		t1 = gettemperature("/sys/devices/virtual/thermal/thermal_zone1", "temp");
+		// t0 = gettemperature("/sys/devices/virtual/thermal/thermal_zone0", "temp");
+		// t1 = gettemperature("/sys/devices/virtual/thermal/thermal_zone1", "temp");
 
-		status = smprintf("| %s | T:%s|%s | %s | B:%s | %s |",
-				kbmap, t0, t1, vol, bat, tmmsc);
+		status = smprintf("| %s | %s | B:%s | %s |",
+				kbmap, vol, bat, tmmsc);
 		setstatus(status);
 
         free(vol);
 		free(kbmap);
-		free(t0);
-		free(t1);
+		// free(t0);
+		// free(t1);
 		free(bat);
 		free(tmmsc);
 		free(status);
