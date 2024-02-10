@@ -28,6 +28,8 @@
 - [abiword](https://wiki.archlinux.org/title/AbiWord) - Word processor
 - [invidtui](https://github.com/darkhz/invidtui) - YouTube TUI
 - [discordo](https://github.com/ayn2op/discordo) - Discord TUI
+- [Thorium](https://thorium.rocks/) - the fastest browser on Chromium
+- [Mercury](https://thorium.rocks/mercury) - cool Firefox fork
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:
