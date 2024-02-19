@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=25:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=20:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -185,11 +185,24 @@ static unsigned int defaultrcs;
 static unsigned int cursorshape = 2;
 
 /*
+ * Whether to use pixel geometry or cell geometry
+ */
+
+static Geometry geometry = CellGeometry;
+
+/*
  * Default columns and rows numbers
  */
 
 static unsigned int cols = 80;
 static unsigned int rows = 24;
+
+/*
+ * Default width and height (including borders!)
+ */
+
+static unsigned int width = 564;
+static unsigned int height = 364;
 
 /*
  * Default colour and shape of the mouse cursor
@@ -256,7 +269,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_0,           nextscheme,     {.i = +1} },
 	{ MODKEY|ControlMask,   XK_0,           nextscheme,     {.i = -1} },
     { MODKEY,               XK_u,           opencopied,     {.v = "chromium"} },
-    { ControlMask|MODKEY,      XK_l,           copyurl,        {.i =  0} },
+    { ControlMask|MODKEY,   XK_u,           copyurl,        {.i =  0} },
 };
 
 /*
