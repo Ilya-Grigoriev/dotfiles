@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/usr/bin/armcord
+Type=Application
+Categories=Development
+Name=armcord
+Icon=discord
