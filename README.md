@@ -71,3 +71,8 @@ export HISTFILE=$ZDOTDIR/history
 
 # GRUB configuration
 - I use [HyperFluent-GRUB-Theme Debian](https://github.com/Coopydood/HyperFluent-GRUB-Theme), but with [other wallpaper](https://github.com/ilya-grigoriev/dotfiles/blob/main/ims/wallpapers/background_grub.png).
+- Also need to change background of GRUB:
+```
+# /etc/default/grub
+GRUB_BACKGROUND=~/ims/wallpapers/background_grub.png
+```
