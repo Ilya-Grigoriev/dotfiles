@@ -70,4 +70,4 @@ export HISTFILE=$ZDOTDIR/history
 - To work well, you need to create `/usr/lib/urxvt/perl` folder and move to this config files from [urxvt-perls](https://github.com/xyb3rt/urxvt-perls).
 
 # GRUB configuration
-- I use [HyperFluent-GRUB-Theme Debian](https://github.com/Coopydood/HyperFluent-GRUB-Theme), but with other wallpaper.
+- I use [HyperFluent-GRUB-Theme Debian](https://github.com/Coopydood/HyperFluent-GRUB-Theme), but with [other wallpaper](https://github.com/ilya-grigoriev/dotfiles/blob/main/ims/wallpapers/background_grub.png).
