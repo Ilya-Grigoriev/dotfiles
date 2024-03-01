@@ -3,8 +3,7 @@
 # Components:
 
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
-- [alacritty](https://github.com/alacritty/alacritty) (using?)
+- [tmux](https://github.com/tmux/tmux) **`>= 1.9`** [alacritty](https://github.com/alacritty/alacritty) (using?)
 - [fzf](https://github.com/junegunn/fzf) - tool for finding files/directories
 - [fd](https://github.com/sharkdp/fd) - tool for finding files/directories
 - [nnn](https://github.com/jarun/nnn) - file manager in terminal
@@ -76,3 +75,6 @@ export HISTFILE=$ZDOTDIR/history
 # /etc/default/grub
 GRUB_BACKGROUND=~/ims/wallpapers/background_grub.png
 ```
+
+# SDDM configuration
+- For [SDDM](https://wiki.archlinux.org/title/SDDM) I use [this wallpaper](https://github.com/ilya-grigoriev/dotfiles/blob/main/ims/wallpapers/strange.png).
