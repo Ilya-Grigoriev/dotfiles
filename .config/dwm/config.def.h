@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 5;        /* border pixel of windows */
@@ -29,7 +30,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */ { "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	/* class      instance    title       tags mask     isfloating   monitor */
+    { "Gimp",     NULL,       NULL,       0,            1,           -1 },
+    { "copyq",    NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -67,13 +70,18 @@ static const char *vieb[] = {"vieb", NULL};
 static const char *telegram[] = {"telegram", NULL};
 static const char *obsidian[] = {"obsidian", NULL};
 
+static const char *brighter[] = { "brightnessctl", "set", "10%+", NULL };
+static const char *dimmer[]   = { "brightnessctl", "set", "10%-", NULL };
+
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd3 } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd2 } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = vieb    } },
 	{ Mod1Mask,                     XK_t,      spawn,          {.v = telegram} },
 	{ MODKEY,                       XK_o,      spawn,          {.v = obsidian} },
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("copyq show") },
     { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("flameshot gui")},
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -114,6 +122,8 @@ static const Key keys[] = {
     { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart")},
     { Mod1Mask,                     XK_Up,     spawn,          SHCMD("~/.local/share/scripts/change_volume -i && ~/.local/share/scripts/dwmstatus-restart")},
     { Mod1Mask,                     XK_Down,   spawn,          SHCMD("~/.local/share/scripts/change_volume -d && ~/.local/share/scripts/dwmstatus-restart")},
+    { 0, XF86XK_MonBrightnessDown, spawn, {.v = dimmer } },
+    { 0, XF86XK_MonBrightnessUp,   spawn, {.v = brighter } },
 };
 
 /* button definitions */
