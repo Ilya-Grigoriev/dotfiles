@@ -1,4 +1,11 @@
+#!/bin/sh
 xrandr -s 1920x1080
+
+bash ~/.local/share/scripts/set_brightness
+
+setxkbmap -option caps:ctrl_modifier
+
+copyq &
 
 sh ~/.config/.fehbg &
 
@@ -6,10 +13,9 @@ sh ~/.config/.fehbg &
 # exec awesome
 
 dwmstatus 2>&1 >/dev/null &
-# slstatus &
 
 while true; do
-   dwm 2> ~/.dwm.log
+    dwm 2> ~/.dwm.log
 done
 
 #exec dwm
