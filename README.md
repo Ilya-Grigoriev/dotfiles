@@ -38,6 +38,8 @@
   - [poetry](https://python-poetry.org/)
 - For dwm:
   - [dwmstatus](https://dwm.suckless.org/status_monitor/)
+  - [pipewire](https://archlinux.org/packages/?name=pipewire)
+  - [brightnessctl](https://archlinux.org/packages/?name=brightnessctl)
 - For i3wm:
   - [xkblayout-state](https://github.com/nonpop/xkblayout-state)
   - [i3blocks](https://github.com/vivien/i3blocks)
