@@ -1,0 +1,3 @@
+#!/bin/sh
+filename=${1%.*}
+latex ${filename}.tex && dvipdf ${filename}.dvi

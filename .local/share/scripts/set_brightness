@@ -1,0 +1,16 @@
+#!/bin/sh
+hour=$(date +%H)
+night=21
+morning=6
+day=12
+evening=18
+
+if (( $night < $hour < $morning )); then
+    xrandr --output eDP-1 --brightness 0.4
+elif (($morning < $hour < $day )); then
+    xrandr --output eDP-1 --brightness 0.6
+elif (($day < $hour < $evening )); then
+    xrandr --output eDP-1 --brightness 0.8
+elif (($evening < $hour < $night )); then
+    xrandr --output eDP-1 --brightness 0.6
+fi
