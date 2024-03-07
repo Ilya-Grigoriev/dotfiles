@@ -90,6 +90,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("copyq show") },
     { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("flameshot gui")},
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
+    { MODKEY|Mod1Mask,              XK_h,      hideborder,     {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
