@@ -40,6 +40,11 @@
   - [dwmstatus](https://dwm.suckless.org/status_monitor/)
   - [pipewire](https://archlinux.org/packages/?name=pipewire)
   - [brightnessctl](https://archlinux.org/packages/?name=brightnessctl)
+  - patches:
+    - [horizontal](https://dwm.suckless.org/patches/horizontal/)
+    - [movecenter](https://dwm.suckless.org/patches/movecenter/)
+    - [moveresize](https://dwm.suckless.org/patches/moveresize/)
+    - [noborder](https://dwm.suckless.org/patches/noborder/)
 - For i3wm:
   - [xkblayout-state](https://github.com/nonpop/xkblayout-state)
   - [i3blocks](https://github.com/vivien/i3blocks)
