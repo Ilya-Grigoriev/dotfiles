@@ -76,9 +76,6 @@ static const char *vieb[] = {"vieb", NULL};
 static const char *telegram[] = {"telegram", NULL};
 static const char *obsidian[] = {"obsidian", NULL};
 
-static const char *brighter[] = { "brightnessctl", "set", "10%+", NULL };
-static const char *dimmer[]   = { "brightnessctl", "set", "10%-", NULL };
-
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -146,8 +143,8 @@ static const Key keys[] = {
     { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart")},
     { Mod1Mask,                     XK_Up,     spawn,          SHCMD("~/.local/share/scripts/change_volume -i && ~/.local/share/scripts/dwmstatus-restart")},
     { Mod1Mask,                     XK_Down,   spawn,          SHCMD("~/.local/share/scripts/change_volume -d && ~/.local/share/scripts/dwmstatus-restart")},
-    { 0, XF86XK_MonBrightnessDown, spawn, {.v = dimmer } },
-    { 0, XF86XK_MonBrightnessUp,   spawn, {.v = brighter } },
+    { 0, XF86XK_MonBrightnessDown, spawn, SHCMD("~/.local/share/scripts/set_brightness -d") },
+    { 0, XF86XK_MonBrightnessUp,   spawn, SHCMD("~/.local/share/scripts/set_brightness -i") },
     { MODKEY,                       XK_x,      movecenter,     {0} },
 };
 
