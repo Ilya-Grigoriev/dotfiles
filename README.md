@@ -50,6 +50,7 @@
         - [changealpha](https://st.suckless.org/patches/changealpha/)
         - [copyurl](https://st.suckless.org/patches/copyurl/)
         - [openclipboard](https://st.suckless.org/patches/open_copied_url/)
+        - [anygeometry](https://st.suckless.org/patches/anygeometry/)
 - For i3wm:
   - [xkblayout-state](https://github.com/nonpop/xkblayout-state)
   - [i3blocks](https://github.com/vivien/i3blocks)
