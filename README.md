@@ -45,6 +45,11 @@
     - [moveresize](https://dwm.suckless.org/patches/moveresize/)
     - [noborder](https://dwm.suckless.org/patches/noborder/)
     - [hidebar](https://dwm.suckless.org/patches/hideborder/)
+- For st:
+    - patches:
+        - [changealpha](https://st.suckless.org/patches/changealpha/)
+        - [copyurl](https://st.suckless.org/patches/copyurl/)
+        - [openclipboard](https://st.suckless.org/patches/open_copied_url/)
 - For i3wm:
   - [xkblayout-state](https://github.com/nonpop/xkblayout-state)
   - [i3blocks](https://github.com/vivien/i3blocks)
