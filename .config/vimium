@@ -1,0 +1,3 @@
+unmap d
+unmap x
+map d removeTab
