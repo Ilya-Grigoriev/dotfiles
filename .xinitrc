@@ -1,13 +1,14 @@
 #!/bin/sh
 xrandr -s 1920x1080
 
-bash ~/.local/share/scripts/set_brightness
 
 setxkbmap -option caps:ctrl_modifier
 
-copyq &
-
 sh ~/.config/.fehbg &
+
+bash ~/.local/share/scripts/set_brightness
+
+copyq &
 
 # exec bspwm
 # exec awesome
