@@ -30,6 +30,7 @@ echo "Setting up ended"
 ############################################
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
+
 echo "Installing pacman..."
 # Source: https://www.cyberithub.com/how-to-install-pacman-package-manager-on-ubuntu-20-04-lts/
 wget https://gitlab.com/trivoxel-utils/deb-pacman/uploads/460d83f8711c1ab5e16065e57e7eeabc/deb-pacman-2.0-0.deb
@@ -38,16 +39,15 @@ rm -rf deb-pacman-*
 echo "Pacman installed!"
 
 
-
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 ############################################
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools chromium synaptic network-manager fontforge pipx python3-pip
+sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip
 
 echo ""
-echo "You want to install rust?"  
+echo "Do you want to install rust?"  
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
@@ -87,7 +87,7 @@ echo "Setting up ended" | lolcat
 
 
 echo ""
-echo "You want to install oh-my-zsh?"
+echo "Do you want to install oh-my-zsh?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
@@ -131,15 +131,20 @@ echo "Scripts added" | lolcat
 
 echo ""
 
-echo "Installing Nerd fonts..." | lolcat
-(cd /tmp && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/AnonymousPro.zip && unzip AnonymousPro.zip -d fonts && cd fonts && sudo cp *.ttf /usr/share/fonts)
-rm -rf /tmp/fonts /tmp/AnonymousPro*
-echo "Nerd fonts installed" | lolcat
+echo "Do you want to install fonts?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Installing Nerd fonts..." | lolcat
+	(cd /tmp && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/AnonymousPro.zip && unzip AnonymousPro.zip -d fonts && cd fonts && sudo cp *.ttf /usr/share/fonts)
+	rm -rf /tmp/fonts /tmp/AnonymousPro*
+	echo "Nerd fonts installed" | lolcat
 
-echo "Installing Liberation fonts..." | lolcat
-(cd /tmp && git clone https://github.com/liberationfonts/liberation-fonts && cd liberation-fonts && python3 -m venv venv && source venv/bin/activate && pip install fonttools && make && sudo cp liberation-fonts-ttf-*/*.ttf /usr/share/fonts) 
-rm -rf /tmp/liberation-fonts
-echo "Liberation fonts installed" | lolcat
+	echo "Installing Liberation fonts..." | lolcat
+	(cd /tmp && git clone https://github.com/liberationfonts/liberation-fonts && cd liberation-fonts && python3 -m venv venv && source venv/bin/activate && pip install fonttools && make && sudo cp liberation-fonts-ttf-*/*.ttf /usr/share/fonts) 
+	rm -rf /tmp/liberation-fonts
+	echo "Liberation fonts installed" | lolcat
+fi
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -149,14 +154,14 @@ echo "Liberation fonts installed" | lolcat
 
 echo ""
 
-echo "You want to install Thorium?"
+echo "Do you want to install Thorium?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	mkdir -p ~/dws
-
+	
 	echo "Installing Thorium..." | lolcat
-	(cd ~/dws && git clone --recursive https://github.com/Alex313031/thorium.git && cd thorium && ./build/install-build-deps.sh --no-nacl && ./build.sh 8) 
+	(cd ~/dws && wget https://github.com/Alex313031/thorium/releases/download/M121.0.6167.204/thorium-browser_121.0.6167.204_AVX.deb && sudo dpkg -i thorium-browser_121.0.6167.204_AVX.deb)
 	echo "Thorium installed" | lolcat
 fi
 
@@ -167,7 +172,7 @@ fi
 
 
 echo ""
-echo "You want to install lazygit?"  
+echo "Do you want to install lazygit?"  
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
@@ -188,7 +193,7 @@ fi
 
 
 echo ""
-echo "You want to install dwm?"
+echo "Do you want to install dwm?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
@@ -212,7 +217,7 @@ fi
 
 
 echo ""
-echo "You want to install dwmstatus?"
+echo "Do you want to install dwmstatus?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
@@ -233,7 +238,7 @@ fi
 
 
 echo ""
-echo "You want to install st?"
+echo "Do you want to install st?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
@@ -254,7 +259,7 @@ fi
 
 
 echo ""
-echo "You want to setting up GitHub CLI?"
+echo "Do you want to setting up GitHub CLI?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
@@ -270,7 +275,7 @@ fi
 
 
 echo ""
-echo "You want to setting up gpg for pass?"
+echo "Do you want to setting up gpg for pass?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
@@ -290,7 +295,7 @@ fi
 
 
 echo ""
-echo "You want ot setting up ssh for GitHub?"
+echo "Do you want ot setting up ssh for GitHub?"
 read yes_or_no
 if [ $yes_or_no=="yes" ]
 then
@@ -311,7 +316,7 @@ fi
 
 
 echo ""
-echo "You want to setting up pass?"
+echo "Do you want to setting up pass?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
