@@ -30,7 +30,7 @@ nnoremap <C-n> :Ntree<CR>
 nnoremap 't :tabnew<CR>
 nnoremap <C-Bslash> :tab :terminal ++close<CR>
 
-colorscheme slate
+colorscheme murphy
 
 set number
 set colorcolumn=79
