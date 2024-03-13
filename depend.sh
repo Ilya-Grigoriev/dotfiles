@@ -54,7 +54,12 @@ then
 	curl https://sh.rustup.rs -sSf | sh
 fi
 
-curl https://pyenv.run | bash
+echo "Do you want to install pyenv?"  
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	curl https://pyenv.run | bash
+fi
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -297,7 +302,7 @@ fi
 echo ""
 echo "Do you want ot setting up ssh for GitHub?"
 read yes_or_no
-if [ $yes_or_no=="yes" ]
+if [ $yes_or_no == "yes" ]
 then
 	echo "Setting up ssh for GitHub..." | lolcat
 	echo "Enter your email: "
@@ -335,12 +340,17 @@ fi
 
 
 echo ""
-echo "Setting up nvim..." | lolcat
-git clone https://github.com/ilya-grigoriev/nvim /tmp/nvim
-sudo mv /tmp/nvim ~/.config/
+echo "Do you want to setting up nvim?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Setting up nvim..." | lolcat
+	git clone https://github.com/ilya-grigoriev/nvim /tmp/nvim
+	sudo mv /tmp/nvim ~/.config/
 
-rm -rf /tmp/nvim
-echo "Setting up ended" | lolcat
+	rm -rf /tmp/nvim
+	echo "Setting up ended" | lolcat
+fi
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -350,7 +360,7 @@ echo "Setting up ended" | lolcat
 
 echo ""
 echo "Setting up wallpapers for system" | lolcat
-mkdir ~/ims/wallpapers
+mkdir -p ~/ims/wallpapers
 cp ims/wallpapers/* ~/ims/wallpapers
 
 cp .config/.fehbg ~/.config/
