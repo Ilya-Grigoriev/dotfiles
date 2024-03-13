@@ -61,7 +61,7 @@
 - Unix:
 
 ```bash
-git clone git@github.com:ilya-grigoriev/dotfiles.git ~/.
+git clone git@github.com:ilya-grigoriev/dotfiles.git
 ```
 
 # Zsh configuration
@@ -71,7 +71,7 @@ git clone git@github.com:ilya-grigoriev/dotfiles.git ~/.
 - Just paste following code:
 
 ```
-export ZDOTDIR=$HOME/.config/zsh
+export ZDOTDIR=~/.config/zsh
 export HISTFILE=$ZDOTDIR/history
 ```
 
