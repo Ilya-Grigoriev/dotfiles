@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill $HOME/wallpapers/tower-nord.png
+feh --no-fehbg --bg-fill ~/ims/wallpapers/tower-nord.png

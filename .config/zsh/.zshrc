@@ -1,4 +1,4 @@
-export DOTFILES=$HOME/.config/
+export DOTFILES=$HOME/.config
 export ZSH=$DOTFILES/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
@@ -12,7 +12,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $DOTFILES/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 for file in $(ls -d $DOTFILES/aliases/*) ; do
   if [ -f "$file" ] ; then
