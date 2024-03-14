@@ -34,7 +34,7 @@ echo "Pacman installed!"
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
+sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev bc
 
 echo ""
 echo "Do you want to install rust?"  
@@ -126,6 +126,7 @@ echo ""
 echo "Add scripts.." | lolcat
 mkdir -p ~/.local/share/scripts
 cp .local/share/scripts/* ~/.local/share/scripts
+chmod +x ~/.local/share/scripts/*
 echo "Scripts added" | lolcat
 
 
