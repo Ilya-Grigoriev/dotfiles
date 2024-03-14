@@ -75,13 +75,6 @@ static const char *vieb[] = {"vieb", NULL};
 static const char *telegram[] = {"telegram", NULL};
 static const char *obsidian[] = {"obsidian", NULL};
 
-static const char *upvol[]      = { "amixer",  "set", "Master", "5%+", NULL };
-static const char *downvol[]    = { "amixer",  "set", "Master", "5%-", NULL };
-static const char *mutevol[]    = { "amixerl", "set", "Master", "toggle", NULL };
-
-static const char *light_up[]   = { "xbacklight",   "-inc", "5", NULL };
-static const char *light_down[] = { "xbacklight",   "-dec", "5", NULL };
-
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -143,14 +136,14 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("systemctl suspend")   },
 	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("systemctl reboot")   },
-	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("~/.local/share/scripts/logout_session")   },
+	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("pkill -u $(who | awk '{print $1}')")   },
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("systemctl poweroff")   },
 	{ ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart")},
 	{ Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart")},
-	{ Mod1Mask,                     XK_Up,     spawn,          SHCMD("~/.local/share/scripts/change_volume -i && ~/.local/share/scripts/dwmstatus-restart")},
-	{ Mod1Mask,                     XK_Down,   spawn,          SHCMD("~/.local/share/scripts/change_volume -d && ~/.local/share/scripts/dwmstatus-restart")},
-/*	{ 0,                            XF86XK_MonBrightnessDown, spawn, SHCMD("") }, */
-/*	{ 0,                            XF86XK_MonBrightnessUp,   spawn, SHCMD("~/.local/share/scripts/set_brightness -i") }, */
+	{ 0,                     	XF86XK_AudioLowerVolume,     spawn,      SHCMD("~/.local/share/scripts/change_volume -i && ~/.local/share/scripts/dwmstatus-restart")},
+	{ 0,                     	XF86XK_AudioRaiseVolume,   spawn,        SHCMD("~/.local/share/scripts/change_volume -d && ~/.local/share/scripts/dwmstatus-restart")},
+	{ 0,                            XF86XK_MonBrightnessDown, spawn, SHCMD("~/.local/share/scripts/set_brightness -d") },
+	{ 0,                            XF86XK_MonBrightnessUp,   spawn, SHCMD("~/.local/share/scripts/set_brightness -i") },
 	{ MODKEY,                       XK_x,      movecenter,     {0} },
 };
 
