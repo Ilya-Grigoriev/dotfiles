@@ -1,6 +1,7 @@
 #!/bin/sh
 xrandr -s 1920x1080
 
+amixer set Capture cap
 
 setxkbmap -option caps:ctrl_modifier
 

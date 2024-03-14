@@ -463,17 +463,6 @@ fi
 
 
 echo ""
-echo "Setting up alsa..." | lolcat
-amixer set Capture cap
-echo "Setting ended" | lolcat
-
-
-# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
-############################################
-# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-
-
-echo ""
 echo "Other" | lolcat
 cp -r .config/* ~/.config/
 
