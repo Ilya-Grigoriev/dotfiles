@@ -1,15 +1,11 @@
-export NNN_FIFO='/tmp/nnn.fifo'
-export NNN_OPENER=nuke
-export NNN_PLUG='d:dragdrop;g:!xdg-open "$nnn";x:!chmod +x "$nnn";t:preview-tabbed'
-export NNN_USE_EDITOR=1
-export NNN_BMS="d:$HOME/Docs;u:/home/user/Cam Uploads;D:$HOME/Downloads/"
-
 export PATH=$PATH:/usr/local/go/bin
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+source $XDG_CONFIG_HOME/nnn.conf
 
 export GROFF_TMAC_PATH="~/mom-2.6"
 

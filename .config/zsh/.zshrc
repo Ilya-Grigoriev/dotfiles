@@ -25,4 +25,4 @@ export FZF_ALT_C_COMMAND="fd --type d -H . ~"
 zle     -N            fzf-cd-widget
 bindkey '\eo' fzf-cd-widget
 
-bindkey -s '^n' 'nnn\n'
+bindkey -s '^n' 'nnn -H\n'
