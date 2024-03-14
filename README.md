@@ -1,6 +1,6 @@
 # dotfiles
 
-# Components:
+# Hardware:
 
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [tmux](https://github.com/tmux/tmux) **`>= 1.9`** [alacritty](https://github.com/alacritty/alacritty) (using?)
@@ -62,8 +62,11 @@
 
 ```bash
 git clone git@github.com:ilya-grigoriev/dotfiles.git
+cd dotfiles.git
+bash depend.sh
 ```
 
+> Instructions below don't need to be followed if you run `depend.sh`!
 # Zsh configuration
 
 - To work well, you need to set `$ZDOTDIR` (from `/etc/zsh/zshenv/`) to `ZDOTDIR=$HOME/.config/zsh`.
