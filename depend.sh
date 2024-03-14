@@ -1,18 +1,8 @@
 #!/bin/sh
 
+
 mkdir ~/.local/share
 mkdir ~/.config
-
-
-# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
-############################################
-# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-
-echo "Setting up Xorg..."
-mkdir ~/.config/x11
-cp .config/x11/* ~/.config/x11
-cp .xinitrc ~/
-echo "Setting up ended"
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -44,7 +34,7 @@ echo "Pacman installed!"
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot
+sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find
 
 echo ""
 echo "Do you want to install rust?"  
@@ -60,6 +50,18 @@ if [[ $yes_or_no == "yes" ]];
 then
 	curl https://pyenv.run | bash
 fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo "Setting up Xorg..."
+mkdir ~/.config/x11
+cp .config/x11/* ~/.config/x11
+cp .xinitrc ~/
+echo "Setting up ended"
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -166,7 +168,11 @@ then
 	mkdir -p ~/dws
 	
 	echo "Installing Thorium..." | lolcat
-	(cd ~/dws && wget https://github.com/Alex313031/thorium/releases/download/M121.0.6167.204/thorium-browser_121.0.6167.204_AVX.deb && sudo dpkg -i thorium-browser_121.0.6167.204_AVX.deb)
+	sudo rm -fv /etc/apt/sources.list.d/thorium.list && \
+	sudo wget --no-hsts -P /etc/apt/sources.list.d/ \
+	http://dl.thorium.rocks/debian/dists/stable/thorium.list && \
+
+	sudo pacman -S thorium-browser
 	echo "Thorium installed" | lolcat
 fi
 
@@ -302,7 +308,7 @@ fi
 echo ""
 echo "Do you want ot setting up ssh for GitHub?"
 read yes_or_no
-if [ $yes_or_no == "yes" ]
+if [[ $yes_or_no == "yes" ]];
 then
 	echo "Setting up ssh for GitHub..." | lolcat
 	echo "Enter your email: "
@@ -345,8 +351,9 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	pac -S ninja-build gettext cmake unzip curl build-essential
-	(cd /tmp && git clone https://github.com/neovim/neovim && cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install)
-	rm -rf /tmp/neovim
+	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+	sudo rm -rf /opt/nvim
+	sudo tar -C /opt -xzf nvim-linux64.tar.gz
 fi
 
 
@@ -361,6 +368,8 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	echo "Setting up nvim..." | lolcat
+	rm -rf ~/.config/nvim
+
 	git clone https://github.com/ilya-grigoriev/nvim /tmp/nvim
 	sudo mv /tmp/nvim ~/.config/
 
@@ -381,3 +390,55 @@ cp ims/wallpapers/* ~/ims/wallpapers
 
 cp .config/.fehbg ~/.config/
 echo "Setting up ended" | lolcat
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
+echo "Do you want to install latex?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Installing latex..." | lolcat
+	curl https://raw.githubusercontent.com/ilya-grigoriev/ege-informatics/main/tools/depends_linux.sh | bash
+	echo "Installing ended" | lolcat
+fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
+echo "Do you want to install nsxiv?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	mkdir /tmp/nsxiv
+	git clone https://github.com/nsxiv/nsxiv /tmp/nsxiv
+	(cd /tmp/nsxiv && make && sudo cp nsxiv /usr/bin)
+
+	rm -rf /tmp/nsxiv
+fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
+echo "Do you want to install sent?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	mkdir /tmp/sent
+	git clone https://git.suckless.org/sent /tmp/sent
+	(cd /tmp/sent && make && sudo cp sent /usr/bin)
+
+	rm -rf /tmp/nsxiv
+fi
