@@ -48,3 +48,4 @@ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 export W3M_DIR="$XDG_DATA_HOME"/w3m
 
+export PATH="$PATH:/opt/nvim-linux64/bin"
