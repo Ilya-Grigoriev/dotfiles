@@ -1,8 +1,8 @@
 #!/bin/sh
 
 
-mkdir ~/.local/share
-mkdir ~/.config
+mkdir -p ~/.local/share
+mkdir -p ~/.config
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -11,7 +11,7 @@ mkdir ~/.config
 
 
 echo "Setting up aliases..." 
-mkdir ~/.config/aliases
+mkdir -p ~/.config/aliases
 cp .config/aliases/* ~/.config/aliases
 echo "Setting up ended"
 
@@ -34,7 +34,7 @@ echo "Pacman installed!"
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find
+sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
 
 echo ""
 echo "Do you want to install rust?"  
@@ -58,7 +58,7 @@ fi
 
 
 echo "Setting up Xorg..."
-mkdir ~/.config/x11
+mkdir -p ~/.config/x11
 cp .config/x11/* ~/.config/x11
 cp .xinitrc ~/
 echo "Setting up ended"
@@ -71,7 +71,7 @@ echo "Setting up ended"
 
 echo ""
 echo "Activating tap with touchpad..."
-sudo mkdir /etc/X11/xorg.conf.d
+sudo mkdir -p /etc/X11/xorg.conf.d
 sudo bash tools/touchpad.sh
 
 echo "Activating ended"
@@ -110,10 +110,7 @@ then
 
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.config/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-	(cd /tmp && git clone https://github.com/wting/autojump.git && cd autojump && ./install.py)
-
-
-	mkdir ~/.config/zsh
+	mkdir -p ~/.config/zsh
 	cp .config/zsh/.* ~/.config/zsh
 	echo "oh-my-zsh installed"
 fi
@@ -127,7 +124,7 @@ fi
 
 echo ""
 echo "Add scripts.." | lolcat
-mkdir ~/.local/share/scripts
+mkdir -p ~/.local/share/scripts
 cp .local/share/scripts/* ~/.local/share/scripts
 echo "Scripts added" | lolcat
 
@@ -150,7 +147,6 @@ then
 	echo "Installing Liberation fonts..." | lolcat
 	(cd /tmp && git clone https://github.com/liberationfonts/liberation-fonts && cd liberation-fonts && python3 -m venv venv && source venv/bin/activate && pip install fonttools && make && sudo cp liberation-fonts-ttf-*/*.ttf /usr/share/fonts) 
 	rm -rf /tmp/liberation-fonts
-	echo "Liberation fonts installed" | lolcat
 fi
 
 
@@ -165,7 +161,7 @@ echo "Do you want to install Thorium?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
-	mkdir -p ~/dws
+	mkdir -p -p ~/dws
 	
 	echo "Installing Thorium..." | lolcat
 	sudo rm -fv /etc/apt/sources.list.d/thorium.list && \
@@ -209,14 +205,14 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	echo "Installing dwm..." | lolcat
-	mkdir ~/.config/dwm
+	mkdir -p ~/.config/dwm
 	git clone https://git.suckless.org/dwm /tmp/dwm/
 	sudo mv /tmp/dwm/* ~/.config/dwm/
 	cp .config/dwm/* ~/.config/dwm
 	(cd ~/.config/dwm/ && cp config.def.h config.h && sudo make clean install)
 	sudo rm -rf /tmp/dwm
 
-	sudo mkdir /usr/share/xsessions
+	sudo mkdir -p /usr/share/xsessions
 	bash tools/dwm_xapp.sh
 	echo "dwm installed" | lolcat
 fi
@@ -233,7 +229,7 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	echo "Installing dwmstatus..." | lolcat
-	mkdir ~/.config/dwmstatus
+	mkdir -p ~/.config/dwmstatus
 	git clone git://git.suckless.org/dwmstatus /tmp/dwmstatus
 	sudo mv /tmp/dwmstatus/* ~/.config/dwmstatus
 	cp .config/dwmstatus/* ~/.config/dwmstatus/
@@ -254,7 +250,7 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	echo "Installing st..." | lolcat
-	mkdir ~/.config/st
+	mkdir -p ~/.config/st
 	git clone https://git.suckless.org/st /tmp/st
 	sudo mv /tmp/st/* ~/.config/st
 	cp .config/st/* ~/.config/st/
@@ -294,7 +290,7 @@ then
 	# Source: https://bbs.archlinux.org/viewtopic.php?id=259173
 	declare -x XDG_DATA_HOME=~/.local/share
 	declare -x GNUPGHOME=$XDG_DATA_HOME/gnupg
-	mkdir -p .local/share/gnupg
+	mkdir -p -p .local/share/gnupg
 	gpg --full-gen-key
 	echo "Setting up ended" | lolcat
 fi
@@ -350,7 +346,7 @@ echo "Do you want to install nvim?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
-	pac -S ninja-build gettext cmake unzip curl build-essential
+	pac -S gettext cmake build-essential
 	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 	sudo rm -rf /opt/nvim
 	sudo tar -C /opt -xzf nvim-linux64.tar.gz
@@ -385,7 +381,7 @@ fi
 
 echo ""
 echo "Setting up wallpapers for system" | lolcat
-mkdir -p ~/ims/wallpapers
+mkdir -p -p ~/ims/wallpapers
 cp ims/wallpapers/* ~/ims/wallpapers
 
 cp .config/.fehbg ~/.config/
@@ -418,7 +414,7 @@ echo "Do you want to install nsxiv?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
-	mkdir /tmp/nsxiv
+	mkdir -p /tmp/nsxiv
 	git clone https://github.com/nsxiv/nsxiv /tmp/nsxiv
 	(cd /tmp/nsxiv && make && sudo cp nsxiv /usr/bin)
 
@@ -436,9 +432,48 @@ echo "Do you want to install sent?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
-	mkdir /tmp/sent
+	mkdir -p /tmp/sent
 	git clone https://git.suckless.org/sent /tmp/sent
 	(cd /tmp/sent && make && sudo cp sent /usr/bin)
 
 	rm -rf /tmp/nsxiv
 fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
+echo "Do you want to install armcord?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	curl -fsSL https://apt.armcord.app/public.gpg | sudo gpg --dearmor -o /usr/share/keyrings/armcord.gpg
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/armcord.gpg] https://apt.armcord.app/ stable main" | sudo tee /etc/apt/sources.list.d/armcord.list
+	sudo apt update
+	sudo apt install armcord
+fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
+echo "Other" | lolcat
+cp -r .config/* ~/.config/
+
+echo "Setting up nnn..." | lolcat
+mkdir -p /tmp/dragon
+git clone https://github.com/mwh/dragon /tmp/dragon
+(cd /tmp/dragon && make && sudo cp dragon /usr/bin)
+rm -rf /tmp/dragon
+
+sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
+cp .config/nnn.conf ~/.config/
+echo "Setting up ended" | lolcat
+
+echo "End" | lolcat
