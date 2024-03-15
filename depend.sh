@@ -492,6 +492,19 @@ OBSBasic.StopRecording={"bindings":[{"alt":true,"control":true,"key":"OBS_KEY_S"
 fi
 
 
+echo ""
+echo "Do you want to setting up tmux?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Setting up tmux..." | lolcat
+	cp -r .config/tmux/* ~/.config/tmux
+
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	echo "Setting up ended" | lolcat
+fi
+
+
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 ############################################
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
