@@ -69,11 +69,27 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+
 static const char *termcmd[]  = { "st", NULL };
 static const char *telegram[] = { "telegram", NULL };
 static const char *obsidian[] = { "obsidian", NULL };
+static const char *copyq[] = { "copyq", "clipboard", NULL };
+static const char *flameshot[] = { "flameshot", "gui", NULL };
 
 static const char *mute_vol[] = { "amixer", "set", "Master", "toggle", NULL };
+static const char *suspend[] = { "systemctl", "suspend", NULL };
+static const char *reboot[] = { "systemctl", "reboot", NULL };
+static const char *poweroff[] = { "systemctl", "poweroff", NULL };
+static const char *logout[] = { "pkill", "-u", "$(who | awk '{print $1}')", NULL };
+
+static const char *volume_up[] = { "~/.local/share/scripts/change_volume -i", NULL };
+static const char *volume_down[] = { "~/.local/share/scripts/change_volume -d", NULL };
+
+static const char *brightness_up[] = { "~/.local/share/scripts/set_brightness -d", NULL };
+static const char *brightness_down[] = { "~/.local/share/scripts/set_brightness -i", NULL };
+
+static const char *dwmstatus_restart[] = { "~/.local/share/scripts/dwmstatus_restart", NULL };
+
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -81,8 +97,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ Mod1Mask,                     XK_t,      spawn,          {.v = telegram } },
 	{ MODKEY,                       XK_o,      spawn,          {.v = obsidian } },
-	{ MODKEY,                       XK_v,      spawn,          SHCMD("copyq clipboard") },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("flameshot gui") },
+	{ MODKEY,                       XK_v,      spawn,          {.v = copyq} },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = flameshot} },
 
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|Mod1Mask,              XK_h,      hideborder,     {0} },
@@ -136,27 +152,26 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
-	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("systemctl suspend") },
-	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("systemctl reboot") },
-	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("pkill -u $(who | awk '{print $1}')") },
-	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("systemctl poweroff") },
 
-	{ ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart") },
-    { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart") },
+	{ ShiftMask,                    XK_Alt_L,  spawn,          {.v = dwmstatus_restart} },
+    { Mod1Mask,                     XK_Shift_L,spawn,          {.v = dwmstatus_restart} },
+
+	{ MODKEY|Mod1Mask,              XK_s,      spawn,          {.v = suspend } },
+	{ MODKEY|Mod1Mask,              XK_r,      spawn,          {.v = reboot } },
+	{ MODKEY|Mod1Mask,              XK_l,      spawn,          {.v = logout } },
+	{ MODKEY|Mod1Mask,              XK_p,      spawn,          {.v = poweroff } },
 
     { 0,                            XF86XK_AudioMute,        spawn, {.v = mute_vol } },
-    { 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("~/.local/share/scripts/change_volume -d") },
-    { 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("~/.local/share/scripts/change_volume -i") },
+    { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volume_up} },
+    { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = volume_down} },
 
-	{ 0,                            XF86XK_MonBrightnessDown,  spawn, SHCMD("~/.local/share/scripts/set_brightness -d") },
-	{ 0,                            XF86XK_MonBrightnessUp,    spawn, SHCMD("~/.local/share/scripts/set_brightness -i") },
+	{ 0,                            XF86XK_MonBrightnessUp,    spawn, {.v = brightness_up} },
+	{ 0,                            XF86XK_MonBrightnessDown,  spawn, {.v = brightness_down} },
 
 	{ MODKEY,                       XK_x,      movecenter,     {0} },
 };
 
-/* button definitions */
-/* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
-static const Button buttons[] = {
+/* button definitions */ /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */ static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
