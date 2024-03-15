@@ -36,8 +36,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-    { "Gimp",     NULL,       NULL,       0,            1,           -1 },
-    { "copyq",    NULL,       NULL,       0,            1,           -1 },
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "copyq",    NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -52,7 +52,7 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-    { "III",      horizontal },
+	{ "III",      horizontal },
 };
 
 /* key definitions */
@@ -70,18 +70,20 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *telegram[] = {"telegram", NULL};
-static const char *obsidian[] = {"obsidian", NULL};
+static const char *telegram[] = { "telegram", NULL };
+static const char *obsidian[] = { "obsidian", NULL };
 
+static const char *mute_vol[] = { "amixer", "set", "Master", "toggle", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ Mod1Mask,                     XK_t,      spawn,          {.v = telegram} },
-	{ MODKEY,                       XK_o,      spawn,          {.v = obsidian} },
+	{ Mod1Mask,                     XK_t,      spawn,          {.v = telegram } },
+	{ MODKEY,                       XK_o,      spawn,          {.v = obsidian } },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("copyq clipboard") },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("flameshot gui")},
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("flameshot gui") },
+
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|Mod1Mask,              XK_h,      hideborder,     {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -96,9 +98,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_minus,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_minus,  setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+
 	{ MODKEY,                       XK_Down,   moveresize,     {.v = "0x 25y 0w 0h" } },
 	{ MODKEY,                       XK_Up,     moveresize,     {.v = "0x -25y 0w 0h" } },
 	{ MODKEY,                       XK_Right,  moveresize,     {.v = "25x 0y 0w 0h" } },
@@ -115,6 +118,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_Down,   moveresizeedge, {.v = "B"} },
 	{ MODKEY|ControlMask|ShiftMask, XK_Left,   moveresizeedge, {.v = "L"} },
 	{ MODKEY|ControlMask|ShiftMask, XK_Right,  moveresizeedge, {.v = "R"} },
+
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -131,16 +135,22 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("systemctl suspend")   },
-	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("systemctl reboot")   },
-	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("pkill -u $(who | awk '{print $1}')")   },
-	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("systemctl poweroff")   },
-	{ ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart")},
-	{ Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart")},
-	{ 0,                     	XF86XK_AudioLowerVolume,   spawn,      SHCMD("amixer set Master 5%- && ~/.local/share/scripts/dwmstatus-restart")},
-	{ 0,                     	XF86XK_AudioRaiseVolume,   spawn       SHCMD("amixer set Master 5%+ && ~/.local/share/scripts/dwmstatus-restart")},
-	{ 0,                            XF86XK_MonBrightnessDown, spawn, SHCMD("~/.local/share/scripts/set_brightness -d") },
-	{ 0,                            XF86XK_MonBrightnessUp,   spawn, SHCMD("~/.local/share/scripts/set_brightness -i") },
+
+	{ MODKEY|Mod1Mask,              XK_s,      spawn,          SHCMD("systemctl suspend") },
+	{ MODKEY|Mod1Mask,              XK_r,      spawn,          SHCMD("systemctl reboot") },
+	{ MODKEY|Mod1Mask,              XK_l,      spawn,          SHCMD("pkill -u $(who | awk '{print $1}')") },
+	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("systemctl poweroff") },
+
+	{ ShiftMask,                    XK_Alt_L,  spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart") },
+    { Mod1Mask,                     XK_Shift_L,spawn,          SHCMD("~/.local/share/scripts/dwmstatus-restart") },
+
+    { 0,                            XF86XK_AudioMute,        spawn, {.v = mute_vol } },
+    { 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("~/.local/share/scripts/change_volume -d") },
+    { 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("~/.local/share/scripts/change_volume -i") },
+
+	{ 0,                            XF86XK_MonBrightnessDown,  spawn, SHCMD("~/.local/share/scripts/set_brightness -d") },
+	{ 0,                            XF86XK_MonBrightnessUp,    spawn, SHCMD("~/.local/share/scripts/set_brightness -i") },
+
 	{ MODKEY,                       XK_x,      movecenter,     {0} },
 };
 
