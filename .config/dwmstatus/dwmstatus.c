@@ -218,8 +218,8 @@ main(void)
 	for (;;sleep(10)) {
 		bat = getbattery("/sys/class/power_supply/BAT0");
 		tmmsc = mktimes("%d.%m.%y %H:%M", tzmoscow);
-		vol = execscript("~/.local/share/scripts/show_volume");
-		kbmap = execscript("~/.local/share/scripts/show_layout_keyboard");
+		vol = execscript("show_volume");
+		kbmap = execscript("show_layout_keyboard");
 
 
 		status = smprintf("| %s | V:%s | B:%s | %s |", kbmap, vol, bat, tmmsc);
