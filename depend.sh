@@ -551,6 +551,19 @@ fi
 
 
 echo ""
+echo "Setting up gtk theme..." | lolcat
+mkdir -p ~/.config/gtk-3.0
+echo "[Settings]
+gtk-application-prefer-dark-theme=1" >> ~/.config/gtk-3.0/settings.ini
+echo "Setting up ended" | lolcat
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
 echo "Other" | lolcat
 cp -r .config/* ~/.config/
 sudo cp /usr/bin/fdfind /usr/bin/fd
