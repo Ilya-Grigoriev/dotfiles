@@ -8,3 +8,5 @@ case $1 in
 		amixer set Master 5%-
 		;;
 esac
+
+bash ~/.local/share/scripts/dwmstatus_restart
