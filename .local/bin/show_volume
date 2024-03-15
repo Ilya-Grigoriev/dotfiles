@@ -5,5 +5,5 @@ if [ $is_muted = "[off]" ];
 then
 	echo "MUTE"
 else
-	amixer get Master | egrep -o '[0-9]{1,3}%'
+	amixer get Master | egrep "Front Left:" | cut -d " " -f7 | tr -d '[]'
 fi
