@@ -6,12 +6,12 @@ morning=6
 day=12
 evening=18
 
-if [ $night -lt $hour ] && [$hour < $morning ]; then
+if [ $night -lt $hour ] && [$hour -lt $morning ]; then
     xrandr --output eDP-1 --brightness 0.4
-elif (($morning < $hour < $day )); then
+elif [ $morning -lt $hour ] && [ $hour -lt $day ]; then
     xrandr --output eDP-1 --brightness 0.6
-elif (($day < $hour < $evening )); then
+elif [ $day -lt $hour ] && [ $hour -lt $evening ]; then
     xrandr --output eDP-1 --brightness 0.8
-elif (($evening < $hour < $night )); then
+elif [ $evening -lt $hour ] && [ $hour -lt $night ]; then
     xrandr --output eDP-1 --brightness 0.6
 fi
