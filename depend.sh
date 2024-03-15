@@ -21,7 +21,7 @@ echo "Setting up ended"
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-if not $(dpkg --list | grep "deb-pacman")
+if [ -z '$(dpkg --list | grep "deb-pacman")' ]
 then
 	echo "Installing pacman..."
 	# Source: https://www.cyberithub.com/how-to-install-pacman-package-manager-on-ubuntu-20-04-lts/
@@ -529,18 +529,30 @@ fi
 
 
 echo ""
+echo "Do you want to setting up nnn?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Setting up nnn..." | lolcat
+	mkdir -p /tmp/dragon
+	git clone https://github.com/mwh/dragon /tmp/dragon
+	(cd /tmp/dragon && make && sudo cp dragon /usr/bin)
+	rm -rf /tmp/dragon
+
+	sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
+	cp .config/nnn.conf ~/.config/
+	echo "Setting up ended" | lolcat
+fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
 echo "Other" | lolcat
 cp -r .config/* ~/.config/
 sudo cp /usr/bin/fdfind /usr/bin/fd
-
-echo "Setting up nnn..." | lolcat
-mkdir -p /tmp/dragon
-git clone https://github.com/mwh/dragon /tmp/dragon
-(cd /tmp/dragon && make && sudo cp dragon /usr/bin)
-rm -rf /tmp/dragon
-
-sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
-cp .config/nnn.conf ~/.config/
-echo "Setting up ended" | lolcat
 
 echo "End" | lolcat
