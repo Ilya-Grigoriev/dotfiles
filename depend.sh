@@ -21,7 +21,7 @@ echo "Setting up ended"
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-if $(dpkg --list | grep "deb-pacman")
+if not $(dpkg --list | grep "deb-pacman")
 then
 	echo "Installing pacman..."
 	# Source: https://www.cyberithub.com/how-to-install-pacman-package-manager-on-ubuntu-20-04-lts/
@@ -474,6 +474,21 @@ then
 	mkdir -p /tmp/obsidian
 	(cd /tmp/obsidian && wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.8/Obsidian-1.5.8.AppImage && chmod +x Obsidian-1.5.8.AppImage && sudo cp Obsidian-1.5.8.AppImage /usr/bin/obsidian)
 	rm -rf /tmp/obsidian
+fi
+
+
+echo ""
+echo "Do you want to setting up obs?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Setting up obs..." | lolcat
+	mkdir -p ~/.config/obs-studio
+	echo $'\n[Hotkeys]
+OBSBasic.StartRecording={"bindings":[{"alt":true,"control":true,"key":"OBS_KEY_S"}]}
+OBSBasic.StopRecording={"bindings":[{"alt":true,"control":true,"key":"OBS_KEY_S"}]}' >> ~/.config/obs-studio/global.ini
+	echo "Setting up ended" | lolcat
+
 fi
 
 
