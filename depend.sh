@@ -37,7 +37,7 @@ fi
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev bc syncthing libcairo2-dev
+sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev bc syncthing libcairo2-dev npm
 
 echo ""
 echo "Do you want to install rust?"  
@@ -346,6 +346,24 @@ fi
 
 
 echo ""
+echo "Do you want to install Lua?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Instaglling Lua..." | lolcat
+	mkdir -p /tmp/lua
+	(cd /tmp/lua && curl -L -R -O https://www.lua.org/ftp/lua-5.4.6.tar.gz  && tar zxf lua-5.4.6.tar.gz && cd lua-5.4.6 && make all test && sudo make install)
+	rm -rf /tmp/lua
+	echo "Installing ended" | lolcat
+fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
 echo "Do you want to install nvim?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
@@ -513,6 +531,7 @@ fi
 echo ""
 echo "Other" | lolcat
 cp -r .config/* ~/.config/
+sudo cp /usr/bin/fdfind /usr/bin/fd
 
 echo "Setting up nnn..." | lolcat
 mkdir -p /tmp/dragon
