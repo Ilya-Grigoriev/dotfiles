@@ -3,6 +3,7 @@
 
 mkdir -p ~/.local/share
 mkdir -p ~/.config
+mkdir -p ~/dev
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
