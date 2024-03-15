@@ -7,6 +7,9 @@ case $1 in
 	-d)
 		amixer set Master 5%-
 		;;
+	-m)
+		amixer set Master toggle
+		;;
 esac
 
-bash ~/.local/share/scripts/dwmstatus_restart
+dwmstatus_restart

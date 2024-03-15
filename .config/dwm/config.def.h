@@ -76,12 +76,12 @@ static const char *obsidian[] = { "obsidian", NULL };
 static const char *copyq[] = { "copyq", "clipboard", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
 
-static const char *mute_vol[] = { "amixer", "set", "Master", "toggle", NULL };
 static const char *suspend[] = { "systemctl", "suspend", NULL };
 static const char *reboot[] = { "systemctl", "reboot", NULL };
 static const char *poweroff[] = { "systemctl", "poweroff", NULL };
 static const char *logout[] = { "logout_system", NULL };
 
+static const char *volume_mute[] = { "change_volume", "-m", NULL };
 static const char *volume_up[] = { "change_volume", "-i", NULL };
 static const char *volume_down[] = { "change_volume", "-d", NULL };
 
@@ -161,7 +161,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_l,      spawn,          {.v = logout } },
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          {.v = poweroff } },
 
-    { 0,                            XF86XK_AudioMute,        spawn, {.v = mute_vol } },
+    { 0,                            XF86XK_AudioMute,        spawn, {.v = volume_mute } },
     { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volume_up} },
     { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = volume_down} },
 
