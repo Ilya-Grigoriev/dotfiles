@@ -10,7 +10,7 @@ mkdir -p ~/.config
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-echo "Setting up aliases..." 
+echo "Setting up aliases..."
 mkdir -p ~/.config/aliases
 cp .config/aliases/* ~/.config/aliases
 echo "Setting up ended"
@@ -40,14 +40,14 @@ fi
 sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev bc syncthing libcairo2-dev npm
 
 echo ""
-echo "Do you want to install rust?"  
+echo "Do you want to install rust?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	curl https://sh.rustup.rs -sSf | sh
 fi
 
-echo "Do you want to install pyenv?"  
+echo "Do you want to install pyenv?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
@@ -127,9 +127,9 @@ fi
 
 echo ""
 echo "Add scripts.." | lolcat
-mkdir -p ~/.local/share/scripts
-cp .local/share/scripts/* ~/.local/share/scripts
-chmod +x ~/.local/share/scripts/*
+mkdir -p ~/.local/bin/
+chmod +x .local/bin/*
+cp .local/bin/* ~/.local/bin/
 echo "Scripts added" | lolcat
 
 
@@ -149,7 +149,7 @@ then
 	echo "Nerd fonts installed" | lolcat
 
 	echo "Installing Liberation fonts..." | lolcat
-	(cd /tmp && git clone https://github.com/liberationfonts/liberation-fonts && cd liberation-fonts && python3 -m venv venv && source venv/bin/activate && pip install fonttools && make && sudo cp liberation-fonts-ttf-*/*.ttf /usr/share/fonts) 
+	(cd /tmp && git clone https://github.com/liberationfonts/liberation-fonts && cd liberation-fonts && python3 -m venv venv && source venv/bin/activate && pip install fonttools && make && sudo cp liberation-fonts-ttf-*/*.ttf /usr/share/fonts)
 	rm -rf /tmp/liberation-fonts
 fi
 
@@ -166,7 +166,7 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	mkdir -p -p ~/dws
-	
+
 	echo "Installing Thorium..." | lolcat
 	sudo rm -fv /etc/apt/sources.list.d/thorium.list && \
 	sudo wget --no-hsts -P /etc/apt/sources.list.d/ \
@@ -183,7 +183,7 @@ fi
 
 
 echo ""
-echo "Do you want to install lazygit?"  
+echo "Do you want to install lazygit?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
