@@ -80,15 +80,15 @@ static const char *mute_vol[] = { "amixer", "set", "Master", "toggle", NULL };
 static const char *suspend[] = { "systemctl", "suspend", NULL };
 static const char *reboot[] = { "systemctl", "reboot", NULL };
 static const char *poweroff[] = { "systemctl", "poweroff", NULL };
-static const char *logout[] = { "pkill", "-u", "$(who | awk '{print $1}')", NULL };
+static const char *logout[] = { "logout_system", NULL };
 
-static const char *volume_up[] = { "~/.local/share/scripts/change_volume -i", NULL };
-static const char *volume_down[] = { "~/.local/share/scripts/change_volume -d", NULL };
+static const char *volume_up[] = { "change_volume", "-i", NULL };
+static const char *volume_down[] = { "change_volume", "-d", NULL };
 
-static const char *brightness_up[] = { "~/.local/share/scripts/set_brightness -d", NULL };
-static const char *brightness_down[] = { "~/.local/share/scripts/set_brightness -i", NULL };
+static const char *brightness_up[] = { "set_brightness", "-i", NULL };
+static const char *brightness_down[] = { "set_brightness", "-d", NULL };
 
-static const char *dwmstatus_restart[] = { "~/.local/share/scripts/dwmstatus_restart", NULL };
+static const char *dwmstatus_restart[] = { "dwmstatus_restart", NULL };
 
 
 static const Key keys[] = {
