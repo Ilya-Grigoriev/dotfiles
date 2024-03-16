@@ -488,6 +488,9 @@ then
 	git clone https://git.suckless.org/sent /tmp/sent
 	(cd /tmp/sent && make && sudo cp sent /usr/bin)
 
+	mkdir -p ~/.config/sent
+	cp /tmp/sent/* ~/.config/sent
+
 	rm -rf /tmp/nsxiv
     cp .config/sent/* ~/.config/sent
 fi
