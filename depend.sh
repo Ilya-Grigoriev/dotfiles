@@ -640,6 +640,6 @@ echo ""
 echo "Other" | lolcat
 cp -r .config/* ~/.config/
 sudo cp /usr/bin/fdfind /usr/bin/fd
-rm -rf ~/.tmux ~/.pyenv ~/.gnupg
+rm -rf ~/.tmux ~/.pyenv ~/.gnupg ~/.oh-my-zsh
 
 echo "End" | lolcat
