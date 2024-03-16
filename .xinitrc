@@ -7,7 +7,7 @@ setxkbmap -option caps:ctrl_modifier
 
 bash ~/.config/.fehbg
 
-bash ~/.local/bin/set_brightness
+bash ~/.local/bin/auto_brightness
 
 copyq &
 
