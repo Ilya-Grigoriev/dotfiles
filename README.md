@@ -3,7 +3,8 @@
 # Hardware:
 
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [tmux](https://github.com/tmux/tmux) **`>= 1.9`** [alacritty](https://github.com/alacritty/alacritty) (using?)
+- [tmux](https://github.com/tmux/tmux) **`>= 1.9`** 
+- [alacritty](https://github.com/alacritty/alacritty) (using?)
 - [fzf](https://github.com/junegunn/fzf) - tool for finding files/directories
 - [fd](https://github.com/sharkdp/fd) - tool for finding files/directories
 - [nnn](https://github.com/jarun/nnn) - file manager in terminal
@@ -58,7 +59,7 @@
 
 # Installation
 
-- Unix:
+- If you are asked about installing something, then enter "yes" if you agree.
 
 ```bash
 git clone git@github.com:ilya-grigoriev/dotfiles.git
