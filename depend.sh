@@ -401,6 +401,7 @@ then
 	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 	sudo rm -rf /opt/nvim
 	sudo tar -C /opt -xzf nvim-linux64.tar.gz
+    rm -rf nvim-linux64.tar.gz
 fi
 
 
@@ -524,7 +525,7 @@ then
 	echo "Installing Discord..." | lolcat
 	wget https://dl.discordapp.net/apps/linux/0.0.45/discord-0.0.45.deb
 	sudo dpkg -i discord-*.deb
-	rm -rf discord.deb
+	rm -rf discord-*.deb
 	echo "Discord installed" | lolcat
 fi
 
@@ -545,6 +546,11 @@ then
 fi
 
 
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
 echo ""
 echo "Do you want to setting up obs?"
 read yes_or_no
@@ -558,6 +564,11 @@ OBSBasic.StopRecording={"bindings":[{"alt":true,"control":true,"key":"OBS_KEY_S"
 	echo "Setting up ended" | lolcat
 
 fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
 echo ""
