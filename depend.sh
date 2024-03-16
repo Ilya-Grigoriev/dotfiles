@@ -21,7 +21,7 @@ echo "Setting up ended"
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-if [ -z '$(dpkg --list | grep "deb-pacman")' ]
+if [ -z "$(dpkg --list | grep 'deb-pacman')" ]
 then
 	echo "Installing pacman..."
 	# Source: https://www.cyberithub.com/how-to-install-pacman-package-manager-on-ubuntu-20-04-lts/
@@ -37,21 +37,16 @@ fi
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev bc syncthing libcairo2-dev npm upower compton lua-check ruby-dev
+sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect vim tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev bc syncthing libcairo2-dev npm upower compton lua-check ruby-dev nnn adb xorg
+
 
 echo ""
+mkdir -p ~/.local/share/cargo/env
 echo "Do you want to install rust?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	curl https://sh.rustup.rs -sSf | sh
-fi
-
-echo "Do you want to install pyenv?"
-read yes_or_no
-if [[ $yes_or_no == "yes" ]];
-then
-	curl https://pyenv.run | bash
 fi
 
 
@@ -60,6 +55,7 @@ fi
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
+echo ""
 echo "Setting up Xorg..."
 mkdir -p ~/.config/x11
 cp .config/x11/* ~/.config/x11
@@ -119,6 +115,19 @@ then
 fi
 
 
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
+echo "Do you want to install pyenv?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	curl https://pyenv.run | bash
+fi
+
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 ############################################
@@ -137,8 +146,8 @@ echo "Scripts added" | lolcat
 ############################################
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
-echo ""
 
+echo ""
 echo "Do you want to install fonts?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
@@ -171,8 +180,9 @@ then
 	sudo rm -fv /etc/apt/sources.list.d/thorium.list && \
 	sudo wget --no-hsts -P /etc/apt/sources.list.d/ \
 	http://dl.thorium.rocks/debian/dists/stable/thorium.list && \
+	sudo apt update
 
-	sudo pacman -S thorium-browser
+	sudo apt install thorium-browser
 	echo "Thorium installed" | lolcat
 fi
 
@@ -249,6 +259,25 @@ fi
 
 
 echo ""
+echo "Do you want to install scroll for st?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Installing scroll..." | lolcat
+	git clone https://git.suckless.org/scroll /tmp/scroll
+	(cd /tmp/scroll && sudo make install)
+	rm -rf /tmp/scroll
+	echo "scroll installed" | lolcat
+fi
+
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
 echo "Do you want to install st?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
@@ -294,7 +323,7 @@ then
 	# Source: https://bbs.archlinux.org/viewtopic.php?id=259173
 	declare -x XDG_DATA_HOME=~/.local/share
 	declare -x GNUPGHOME=$XDG_DATA_HOME/gnupg
-	mkdir -p -p .local/share/gnupg
+	mkdir -p ~/.local/share/gnupg
 	gpg --full-gen-key
 	echo "Setting up ended" | lolcat
 fi
@@ -585,8 +614,32 @@ echo "Setting up ended" | lolcat
 
 
 echo ""
+echo "Do you want to setting up git?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Setting up git..." | lolcat
+	echo "Enter your email for git:"
+	read email
+
+	echo ""
+	echo "Enter your name for git:"
+	read name
+	git config --global user.email $email
+	git config --global user.name $name
+	echo "Setting ended" | lolcat
+fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
 echo "Other" | lolcat
 cp -r .config/* ~/.config/
 sudo cp /usr/bin/fdfind /usr/bin/fd
+rm -rf ~/.tmux ~/.pyenv ~/.gnupg
 
 echo "End" | lolcat
