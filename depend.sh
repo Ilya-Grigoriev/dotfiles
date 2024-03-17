@@ -685,6 +685,7 @@ sudo cp /usr/bin/fdfind /usr/bin/fd
 rm -rf ~/.tmux ~/.pyenv ~/.gnupg ~/.oh-my-zsh
 mkdir -p ~/sng
 
+# For fixing problem with slowly running app
 sudo pacman -R xdg-desktop-portal xdg-desktop-portal-gtk
 
 echo "End" | lolcat
