@@ -20,7 +20,6 @@ echo "Setting up ended"
 ############################################
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
-
 if [ -z "$(dpkg --list | grep 'deb-pacman')" ]
 then
 	echo "Installing pacman..."
@@ -685,5 +684,7 @@ cp -r .config/* ~/.config/
 sudo cp /usr/bin/fdfind /usr/bin/fd
 rm -rf ~/.tmux ~/.pyenv ~/.gnupg ~/.oh-my-zsh
 mkdir -p ~/sng
+
+sudo pacman -R xdg-desktop-portal xdg-desktop-portal-gtk
 
 echo "End" | lolcat
