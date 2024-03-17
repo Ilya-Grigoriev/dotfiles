@@ -30,6 +30,7 @@
 - [discordo](https://github.com/ayn2op/discordo) - Discord TUI
 - [Thorium](https://thorium.rocks/) - the fastest browser on Chromium
 - [Mercury](https://thorium.rocks/mercury) - cool Firefox fork
+- [zaread](https://github.com/paoloap/zaread) - script for opening Microsoft Office documents
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:
