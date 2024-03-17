@@ -663,6 +663,17 @@ then
 fi
 
 
+echo ""
+echo "Do you want to setting up zathura?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Setting up zathura..." | lolcat
+	mkdir -p ~/.config/zathura
+	cp .config/zathura/* ~/.config/zathura
+	echo "Setting up ended" | lolcat
+fi
+
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 ############################################
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
