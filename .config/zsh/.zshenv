@@ -1,4 +1,5 @@
 export PATH=$PATH:/usr/local/go/bin
+export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
