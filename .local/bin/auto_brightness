@@ -6,11 +6,11 @@ morning=6
 day=12
 evening=18
 
-if [ "$morning" -lt "$hour" ] && [ "$hour" -lt "$day" ]; then
+if [ "$morning" -le "$hour" ] && [ "$hour" -le "$day" ]; then
     xrandr --output eDP-1 --brightness 0.6
-elif [ "$day" -lt "$hour" ] && [ "$hour" -lt "$evening" ]; then
+elif [ "$day" -le "$hour" ] && [ "$hour" -le "$evening" ]; then
     xrandr --output eDP-1 --brightness 0.8
-elif [ "$evening" -lt "$hour" ] && [ "$hour" -lt "$night" ]; then
+elif [ "$evening" -le "$hour" ] && [ "$hour" -le "$night" ]; then
     xrandr --output eDP-1 --brightness 0.6
 else
     xrandr --output eDP-1 --brightness 0.4
