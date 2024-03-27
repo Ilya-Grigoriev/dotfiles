@@ -3,7 +3,7 @@
 # Hardware:
 
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [tmux](https://github.com/tmux/tmux) **`>= 1.9`** 
+- [tmux](https://github.com/tmux/tmux) **`>= 1.9`**
 - [alacritty](https://github.com/alacritty/alacritty) (using?)
 - [fzf](https://github.com/junegunn/fzf) - tool for finding files/directories
 - [fd](https://github.com/sharkdp/fd) - tool for finding files/directories
@@ -31,6 +31,7 @@
 - [Thorium](https://thorium.rocks/) - the fastest browser on Chromium
 - [Mercury](https://thorium.rocks/mercury) - cool Firefox fork
 - [zaread](https://github.com/paoloap/zaread) - script for opening Microsoft Office documents
+- [vhs](https://github.com/charmbracelet/vhs) - tool for recording CLI
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:

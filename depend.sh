@@ -39,6 +39,11 @@ fi
 sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev bc syncthing libcairo2-dev npm upower compton lua-check ruby-dev nnn adb xorg bat libreoffice-base mupdf bison libncurses-dev ntfs-3g kolourpaint tk tk-dev screenkey gimp
 
 
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
 echo ""
 mkdir -p ~/.local/share/cargo/
 echo "Do you want to install rust?"
@@ -46,6 +51,21 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	curl https://sh.rustup.rs -sSf | sh
+fi
+
+
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
+echo "Do you want to install golang?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+    (cd /tmp && wget https://go.dev/dl/go1.22.1.linux-amd64.tar.gz && sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go*.linux-*.tar.gz)
+    rm -rf /tmp/go*.linux-*.tar.gz
 fi
 
 
@@ -81,14 +101,21 @@ echo "Activating ended"
 
 
 echo ""
-echo "Setting up vim..." | lolcat
-git clone https://github.com/vim/vim.git
-cd vim/src
-make
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-cp -r .vim ~/
-echo "Setting up ended" | lolcat
+echo "Do you want to install vim?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+    echo "Setting up vim..." | lolcat
+    mkdir -p ~/.vim
+    mkdir -p ~/.vim/bundle
+    (cd /tmp && git clone https://github.com/vim/vim.git && cd vim/src && make && sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+
+    rm -rf /tmp/vim
+    cp -r .vim ~/
+
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    echo "Setting up ended" | lolcat
+fi
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
