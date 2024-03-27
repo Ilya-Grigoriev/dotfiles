@@ -36,7 +36,7 @@ fi
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 
 
-sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev bc syncthing libcairo2-dev npm upower compton lua-check ruby-dev nnn adb xorg bat libreoffice-base mupdf bison libncurses-dev ntfs-3g kolourpaint tk tk-dev screenkey gimp
+sudo pacman -S zathura cmake zsh curl neofetch lolcat ripgrep xclip fzf tldr libxft-dev libx11-dev cmus gh pass feh copyq kdeconnect tmux libx11-dev mesa-common-dev libglu1-mesa-dev libxrandr-dev libxi-dev libxinerama-dev htop mpv obs-studio suckless-tools synaptic network-manager fontforge pipx python3-pip flameshot entr pandoc libimlib2-dev libexif-dev abiword fd-find meson ninja-build fonts-recommended libgtk-3-dev pulseaudio alsa-utils libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev bc syncthing libcairo2-dev npm upower compton lua-check ruby-dev nnn adb xorg bat libreoffice-base mupdf bison libncurses-dev ntfs-3g kolourpaint tk tk-dev screenkey gimp vhs
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
