@@ -1,4 +1,4 @@
-export PATH=$PATH:/usr/local/go/bin
+[[ -d /usr/local/go/bin ]] && export PATH=$PATH:/usr/local/go/bin
 export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -23,7 +23,7 @@ eval "$(pyenv init -)"
 xrdb -load "$XDG_CONFIG_HOME/x11/xresources"
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
-. "/home/ilya/.local/share/cargo/env"
+[[ -d $XDG_CONFIG_DATA_HOME/cargo/env ]] && . "/home/ilya/.local/share/cargo/env"
 
 export GOPATH="$XDG_DATA_HOME"/go
 
