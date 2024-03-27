@@ -32,6 +32,7 @@
 - [Mercury](https://thorium.rocks/mercury) - cool Firefox fork
 - [zaread](https://github.com/paoloap/zaread) - script for opening Microsoft Office documents
 - [vhs](https://github.com/charmbracelet/vhs) - tool for recording CLI
+- [sc-im](https://github.com/andmarti1424/sc-im) - spreadsheet calculator
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:
