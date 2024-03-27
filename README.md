@@ -16,7 +16,6 @@
 - [nsxiv](https://github.com/nsxiv/nsxiv) - image viewer
 - [sent](https://tools.suckless.org/sent/) - presentation tool
 - [urxvt](https://wiki.archlinux.org/title/Rxvt-unicode) - terminal
-- [copyq](https://github.com/hluk/CopyQ) - clipboard tool
 - [flameshot](https://github.com/flameshot-org/flameshot) - screenshot tool
 - [feh](https://github.com/derf/feh) - wallpaper manager
 - [pass](https://wiki.archlinux.org/title/Pass) - password manager

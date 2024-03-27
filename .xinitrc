@@ -9,8 +9,6 @@ bash ~/.config/.fehbg
 
 bash ~/.local/bin/auto_brightness
 
-copyq &
-
 # exec bspwm
 # exec awesome
 
