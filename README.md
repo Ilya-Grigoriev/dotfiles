@@ -32,6 +32,7 @@
 - [zaread](https://github.com/paoloap/zaread) - script for opening Microsoft Office documents
 - [vhs](https://github.com/charmbracelet/vhs) - tool for recording CLI
 - [sc-im](https://github.com/andmarti1424/sc-im) - spreadsheet calculator
+- [bluetuith](https://github.com/darkhz/bluetuith) - CLI for bluetooth connecting
 - For tmux config:
   - [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - For zsh config:
