@@ -1,4 +1,5 @@
 #!/bin/sh
+lh cm-super
 
 mkdir -p ~/.local/share
 mkdir -p ~/.config
@@ -105,16 +106,25 @@ echo "Do you want to install vim?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
-    echo "Setting up vim..." | lolcat
+    echo "Install vim..." | lolcat
     mkdir -p ~/.vim
     mkdir -p ~/.vim/bundle
     (cd /tmp && git clone https://github.com/vim/vim.git && cd vim/src && make && sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
 
     rm -rf /tmp/vim
-    cp -r .vim ~/
+    echo "Install ended" | lolcat
+fi
 
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    echo "Setting up ended" | lolcat
+echo ""
+echo "Do you want to setting up vim?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Setting up vim..."
+	cp -r .vim ~/
+
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	echo "Setting up ended"
 fi
 
 
@@ -124,15 +134,15 @@ fi
 
 
 echo ""
-echo "Do you want to install oh-my-zsh?"
+echo "Do you want to install oh-my-zsh with plugins?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	echo "Installing oh-my-zsh..."
 
 	rm -rf ~/.config/.oh-my-zsh/
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	rm -rf ~/.zshrc
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 	sudo bash tools/zsh_env.sh
 
