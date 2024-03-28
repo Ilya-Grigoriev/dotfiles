@@ -18,8 +18,8 @@ for file in $(ls -d $DOTFILES/aliases/*) ; do
   fi
 done
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 export FZF_ALT_C_COMMAND="fd --type d -H . ~"
 zle     -N            fzf-cd-widget
