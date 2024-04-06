@@ -1,6 +1,6 @@
 alias cam='ffplay -f video4linux2 -framerate 30 -video_size hd720 /dev/video0'
 
-func cam_rec ()
+cam_rec ()
 {
 	mkdir -p vds/sc
 	ffmpeg \
@@ -8,7 +8,7 @@ func cam_rec ()
 	 vds/sc/${1}.mp4
 }
 
-func rec ()
+rec ()
 {
 	mkdir -p vds/sc
 	ffmpeg \
