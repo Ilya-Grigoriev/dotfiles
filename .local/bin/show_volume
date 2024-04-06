@@ -1,9 +1,9 @@
 #!/bin/sh
 
-is_muted=$(amixer get Master | grep -E "Front Left:" | cut -d " " -f8 )
+is_muted=$(amixer get Master | grep -E "Front Left:" | cut -d " " -f7 )
 if [ $is_muted = "[off]" ];
 then
 	echo "MUTE"
 else
-	amixer get Master | grep -E "Front Left:" | cut -d " " -f6 | tr -d '[]'
+	amixer get Master | grep -E "Front Left:" | cut -d " " -f7 | tr -d '[]'
 fi
