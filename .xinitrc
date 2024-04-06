@@ -1,9 +1,18 @@
 #!/bin/sh
 xrandr -s 1920x1080
 
+amixer set Master unmute
+amixer set Headphone unmute
+amixer set Speaker unmute
 amixer set Capture cap
+pulseaudio -k
+pulseaudio &
 
 setxkbmap -option caps:ctrl_modifier
+setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'
+
+rfkill unblock wifi
+ip link set wlan0 up
 
 bash ~/.config/.fehbg
 
