@@ -26,9 +26,10 @@
 - [antiword](https://linux.die.net/man/1/antiword) - display Word document text
 - [abiword](https://wiki.archlinux.org/title/AbiWord) - Word processor
 - [invidtui](https://github.com/darkhz/invidtui) - YouTube TUI
+- [ytermusic](https://github.com/ccgauche/ytermusic) - YouTube Music TUI
 - [discordo](https://github.com/ayn2op/discordo) - Discord TUI
 - [Thorium](https://thorium.rocks/) - the fastest browser on Chromium
-- [Mercury](https://thorium.rocks/mercury) - cool Firefox fork
+- [Mercury](https://thorium.rocks/mercury) - cool Firefox fork browser
 - [zaread](https://github.com/paoloap/zaread) - script for opening Microsoft Office documents
 - [vhs](https://github.com/charmbracelet/vhs) - tool for recording CLI
 - [sc-im](https://github.com/andmarti1424/sc-im) - spreadsheet calculator
