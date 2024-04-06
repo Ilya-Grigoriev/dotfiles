@@ -4,6 +4,7 @@ lh cm-super
 mkdir -p ~/.local/share
 mkdir -p ~/.config
 mkdir -p ~/dev
+mkdir -p ~/sng
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -730,7 +731,6 @@ echo "Other" | lolcat
 cp -r .config/* ~/.config/
 sudo cp /usr/bin/fdfind /usr/bin/fd
 rm -rf ~/.tmux ~/.pyenv ~/.gnupg ~/.oh-my-zsh
-mkdir -p ~/sng
 
 # For fixing problem with slowly running app
 sudo pacman -R xdg-desktop-portal xdg-desktop-portal-gtk
