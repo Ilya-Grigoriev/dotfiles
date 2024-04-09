@@ -9,9 +9,9 @@
 - [fd](https://github.com/sharkdp/fd) - tool for finding files/directories
 - [nnn](https://github.com/jarun/nnn) - file manager in terminal
 - [vieb](https://github.com/Jelmerro/Vieb) - Vi-mode browser
-- [i3wm](https://github.com/i3/i3)
-- [dwm](https://dwm.suckless.org/)
-- [bspwm](https://github.com/baskerville/bspwm)
+- [i3wm](https://github.com/i3/i3) - tiling window manager
+- [dwm](https://dwm.suckless.org/) - dynamic window manager
+- [bspwm](https://github.com/baskerville/bspwm) - tiling window manager №2
 - [entr](https://github.com/eradman/entr) - commands automation
 - [nsxiv](https://github.com/nsxiv/nsxiv) - image viewer
 - [sent](https://tools.suckless.org/sent/) - presentation tool
@@ -68,7 +68,8 @@
 ```bash
 git clone git@github.com:ilya-grigoriev/dotfiles.git
 cd dotfiles.git
-bash depend.sh
+bash depend_{your_os}.sh
+bash rocks.sh
 ```
 
 > Instructions below don't need to be followed if you run `depend.sh`!
