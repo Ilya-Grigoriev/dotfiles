@@ -5,5 +5,21 @@ if ! [ -f "/usr/bin/yay" ]; then
 	echo "yay installed"
 fi
 
-yay -S obsidian-bin thorium-browser-bin fd
-sudo pacman -S htop bc vim vi lolcat grep fzf cmus nnn gimp dmenu zathura npm rust github-cli less neofetch tree lua obs-studio mpv
+yay -S obsidian-bin thorium-browser-bin fd ttf-jetbrains-mono-git
+sudo pacman -S htop bc vim vi lolcat grep fzf cmus nnn gimp dmenu zathura npm rust github-cli less neofetch tree lua obs-studio mpv man wpa_supplicant-openrc dhcpcd-openrc
+
+echo "Setting up network..."
+sudo rc-update add dhcpcd default
+sudo rc-service dhcpcd start
+
+sudo rc-update add wpa_supplicant default
+sudo rc-service wpa_supplicant start
+
+sudo rc-update add wpa_supplicant default
+sudo rc-service wpa_supplicant start
+
+echo "Setting up audio..."
+sudo rc-update add alsasound default
+sudo rc-service alsasound start
+
+sudo gpasswd $(echo $USER) audio
