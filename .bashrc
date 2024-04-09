@@ -18,3 +18,6 @@ for file in $(ls -d $DOTFILES/aliases/*) ; do
 done
 
 source $DOTFILES/zsh/.zshenv
+
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
