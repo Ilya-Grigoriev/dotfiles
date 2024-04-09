@@ -703,6 +703,23 @@ fi
 
 
 echo ""
+echo "Do you want to install ytermusic?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Installing ytermusic..." | lolcat
+	sudo pacman -S alsa-tools libasound2-dev libdbus-1-dev pkg-config
+	cargo install ytermusic --git https://github.com/ccgauche/ytermusic
+	echo "Installing ended" | lolcat
+fi
+
+	
+# ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+############################################
+# ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+
+
+echo ""
 echo "Other" | lolcat
 cp -r .config/* ~/.config/
 sudo cp /usr/bin/fdfind /usr/bin/fd
