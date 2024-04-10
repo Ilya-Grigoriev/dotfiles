@@ -23,7 +23,8 @@ eval "$(pyenv init -)"
 xrdb -load "$XDG_CONFIG_HOME/x11/xresources"
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
-[[ -d $XDG_CONFIG_DATA_HOME/cargo/env ]] && . "/home/ilya/.local/share/cargo/env"
+[[ -d $CARGO_HOME/env ]] && . "$CARGO_HOME/env"
+export PATH=$PATH:$CARGO_HOME/bin
 
 export GOPATH="$XDG_DATA_HOME"/go
 
