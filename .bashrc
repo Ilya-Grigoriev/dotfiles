@@ -33,6 +33,8 @@ fzf-cd(){
 export FZF_ALT_C_COMMAND="fd --type d -H . ~"
 bind -x '"\em": fzf-cd'
 
+bind -x '"\C-n": "nnn"'
+
 
 shopt -s autocd
 
