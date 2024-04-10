@@ -53,11 +53,16 @@ fi
 
 
 echo ""
-echo "Setting up Xorg..."
-mkdir -p ~/.config/x11
-cp .config/x11/* ~/.config/x11
-cp .xinitrc ~/
-echo "Setting up ended"
+echo "Do you want to setting up Xorg?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Setting up Xorg..."
+	mkdir -p ~/.config/x11
+	cp .config/x11/* ~/.config/x11
+	cp .xinitrc ~/
+	echo "Setting up ended"
+fi
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -66,11 +71,16 @@ echo "Setting up ended"
 
 
 echo ""
-echo "Activating tap with touchpad..."
-sudo mkdir -p /etc/X11/xorg.conf.d
-sudo bash tools/touchpad.sh
+echo "Do you want to setting up touchpad?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Activating tap with touchpad..."
+	sudo mkdir -p /etc/X11/xorg.conf.d
+	sudo bash tools/touchpad.sh
 
-echo "Activating ended"
+	echo "Activating ended"
+fi
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -91,6 +101,7 @@ then
     rm -rf /tmp/vim
     echo "Install ended" | lolcat
 fi
+
 
 echo ""
 echo "Do you want to setting up vim?"
@@ -153,11 +164,16 @@ fi
 
 
 echo ""
-echo "Add scripts.." | lolcat
-mkdir -p ~/.local/bin/
-chmod +x .local/bin/*
-cp .local/bin/* ~/.local/bin/
-echo "Scripts added" | lolcat
+echo "Do you want to add scripts?"
+read yes_or_no
+if [[ $yes_or_no == "yes" ]];
+then
+	echo "Adding scripts.." | lolcat
+	mkdir -p ~/.local/bin/
+	chmod +x .local/bin/*
+	cp .local/bin/* ~/.local/bin/
+	echo "Scripts added" | lolcat
+fi
 
 
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
@@ -187,7 +203,6 @@ fi
 
 
 echo ""
-
 echo "Do you want to install Thorium?"
 read yes_or_no
 if [[ $yes_or_no == "yes" ]];
