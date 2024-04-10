@@ -3,7 +3,7 @@
 #
 
 # If not running interactively, don't do anything
-[[ $- == *i* ]] && return
+# [[ $- == *i* ]] && return
 
 
 set -o noclobber
@@ -25,6 +25,13 @@ done
 
 
 source $DOTFILES/zsh/.zshenv
+
+
+fzf-cd(){
+    cd $(find | fzf )
+}
+export FZF_ALT_C_COMMAND="fd --type d -H . ~"
+bind -x '"\em": fzf-cd'
 
 
 shopt -s autocd
