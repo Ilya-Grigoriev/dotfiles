@@ -5,8 +5,6 @@ amixer set Master unmute
 amixer set Headphone unmute
 amixer set Speaker unmute
 amixer set Capture cap
-pulseaudio -k
-pulseaudio &
 
 setxkbmap -option caps:ctrl_modifier
 setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'
