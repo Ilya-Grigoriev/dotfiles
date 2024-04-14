@@ -12,7 +12,7 @@ sudo pacman -S htop bc vim vi lolcat grep fzf cmus nnn gimp dmenu zathura zathur
 echo "Setting up network..." | lolcat
 # sudo rc-update add dhcpcd default
 # sudo rc-service dhcpcd start
-# 
+#
 # sudo rc-update add wpa_supplicant default
 # sudo rc-service wpa_supplicant start
 
@@ -25,5 +25,6 @@ sudo rc-update add alsasound default
 sudo rc-service alsasound start
 sudo gpasswd $(echo $USER) audio
 
+echo "Setting up bluetooth..." | lolcat
 sudo rc-update add bluetooth default
 sudo rc-service bluetooth start
