@@ -24,3 +24,6 @@ echo "Setting up audio..." | lolcat
 sudo rc-update add alsasound default
 sudo rc-service alsasound start
 sudo gpasswd $(echo $USER) audio
+
+sudo rc-update add bluetooth default
+sudo rc-service bluetooth start
