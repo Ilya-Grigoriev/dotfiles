@@ -1,5 +1,6 @@
 #!/bin/sh
-monitor="eDP-1"
+monitor=$(xrandr --verbose --current | grep "eDP\?1" | cut -d ' ' -f 1)
+
 brightness=$(xrandr --verbose --current | grep ^"$monitor" -A5 | tail -n1 | tr -d -c '0-9\.')
 
 case $1 in
