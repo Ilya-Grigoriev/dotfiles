@@ -32,6 +32,7 @@ fzf-cd(){
 }
 export FZF_ALT_C_COMMAND="fd --type d -H . ~"
 bind -x '"\em": fzf-cd'
+eval "$(fzf --bash)"
 
 bind -x '"\C-n": "nnn"'
 
