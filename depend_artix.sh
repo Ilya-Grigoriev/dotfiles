@@ -1,12 +1,13 @@
 if ! [ -f "/usr/bin/yay" ]; then
 	echo "Installing yay..."
+	rm -rf /tmp/yay
 	(cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si)
 	rm -rf /tmp/yay
 	echo "yay installed"
 fi
 
 yay -S obsidian-bin thorium-browser-bin fd ttf-jetbrains-mono-git nsxiv sent
-sudo pacman -S htop bc vim vi lolcat grep fzf cmus nnn gimp dmenu zathura zathura-pdf-poppler npm rust github-cli less neofetch tree lua obs-studio mpv man wpa_supplicant-openrc dhcpcd-openrc networkmanager-openrc man wget ripgrep usbutils alsa-utils alsa-firmware pulseaudio-alsa pulseaudio-bluetooth syncthing-openrc entr pandoc flameshot yt-dlp sof-firmware unzip xorg xorg-xinit feh xf86-video-intel xsel openssh
+sudo pacman -S htop bc vim vi lolcat grep fzf cmus nnn gimp dmenu zathura zathura-pdf-poppler npm rust github-cli less neofetch tree lua obs-studio mpv man wpa_supplicant-openrc dhcpcd-openrc networkmanager-openrc man wget ripgrep usbutils alsa-utils alsa-firmware pulseaudio-alsa pulseaudio-bluetooth syncthing-openrc entr pandoc flameshot yt-dlp sof-firmware unzip xorg xorg-xinit feh xf86-video-intel xsel openssh xclip tldr fzf
 
 
 echo "Setting up network..." | lolcat
