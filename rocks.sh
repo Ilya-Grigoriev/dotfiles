@@ -487,7 +487,7 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	echo "Installing latex..." | lolcat
-	curl https://raw.githubusercontent.com/ilya-grigoriev/ege-informatics/main/tools/depends_linux.sh | bash
+	bash <(curl https://raw.githubusercontent.com/ilya-grigoriev/ege-informatics/main/tools/depends_linux.sh)
 	echo "Installing ended" | lolcat
 fi
 
