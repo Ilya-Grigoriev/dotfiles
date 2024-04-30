@@ -252,7 +252,10 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	echo "Installing dwm..." | lolcat
+    rm -rf ~/.config/dwm
+    rm -rf /tmp/dwm
 	mkdir -p ~/.config/dwm
+
 	git clone https://git.suckless.org/dwm /tmp/dwm/
 	sudo mv /tmp/dwm/* ~/.config/dwm/
 	cp .config/dwm/* ~/.config/dwm
@@ -728,7 +731,7 @@ then
 	echo "Installing ended" | lolcat
 fi
 
-	
+
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 ############################################
 # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
