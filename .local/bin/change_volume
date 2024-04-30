@@ -2,13 +2,13 @@
 
 case $1 in
 	-i)
-		amixer set Speaker 5%+
+		amixer set Master 5%+
 		;;
 	-d)
-		amixer set Speaker 5%-
+		amixer set Master 5%-
 		;;
 	-m)
-		amixer set Speaker toggle
+		amixer set Master toggle
 		;;
 esac
 
