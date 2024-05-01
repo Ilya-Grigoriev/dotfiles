@@ -5,11 +5,11 @@ brightness=$(xrandr --verbose --current | grep ^"$monitor" -A5 | tail -n1 | tr -
 
 case $1 in
     -i)
-        command="echo '$brightness + 0.1' | bc"
+        command='perl -e "print $brightness+0.1"'
         new_brightness=$(eval "$command")
         ;;
     -d)
-        command="echo '$brightness - 0.1' | bc"
+        command='perl -e "print $brightness-0.1"'
         new_brightness=$(eval "$command")
         ;;
 esac
