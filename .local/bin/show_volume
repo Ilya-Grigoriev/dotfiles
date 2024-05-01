@@ -1,9 +1,9 @@
 #!/bin/sh
 
-is_muted=$(amixer get Master | grep -o -P "\[[a-z]+\]" | tr -d '[]')
+is_muted=$(amixer get Master | grep -m 1 -o -P "\[[a-z]+\]" | tr -d '[]')
 if [[ $is_muted = "off" ]];
 then
 	echo "MUTE"
 else
-    amixer get Master | grep -o -P "\[[0-9]+\%\]" | tr -d '[]'
+    amixer get Master | grep -m 1 -o -P "\[[0-9]+\%\]" | tr -d '[]'
 fi
