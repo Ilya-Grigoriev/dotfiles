@@ -1,4 +1,5 @@
 #!/bin/sh
+monitor=$(xrandr --verbose --current | grep "eDP\?1" | cut -d ' ' -f 1)
 
 hour=$(date +%H)
 night=21
@@ -7,11 +8,11 @@ day=12
 evening=18
 
 if [ "$morning" -le "$hour" ] && [ "$hour" -le "$day" ]; then
-    xrandr --output eDP-1 --brightness 0.6
+    xrandr --output $monitor --brightness 0.6
 elif [ "$day" -le "$hour" ] && [ "$hour" -le "$evening" ]; then
-    xrandr --output eDP-1 --brightness 0.8
+    xrandr --output $monitor --brightness 0.8
 elif [ "$evening" -le "$hour" ] && [ "$hour" -le "$night" ]; then
-    xrandr --output eDP-1 --brightness 0.6
+    xrandr --output $monitor --brightness 0.6
 else
-    xrandr --output eDP-1 --brightness 0.4
+    xrandr --output $monitor --brightness 0.4
 fi
