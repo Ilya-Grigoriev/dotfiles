@@ -12,6 +12,7 @@ setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'
 rfkill unblock wifi
 ip link set wlan0 up
 
+
 rfkill unblock bluetooth
 pulseaudio -k
 pulseaudio &
