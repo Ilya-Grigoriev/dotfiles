@@ -38,6 +38,8 @@ set cursorline
 set wildmenu
 set ignorecase
 
+set laststatus=2
+
 filetype on
 filetype plugin on
 filetype indent on
@@ -45,3 +47,59 @@ filetype indent on
 syntax on
 
 vnoremap <C-y> :w !xclip -i -sel c<CR><CR>
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+
+Plugin 'nanotech/jellybeans.vim'
+
+Plugin 'lervag/vimtex'
+
+Plugin 'prabirshrestha/asyncomplete-ultisnips.vim'
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'dense-analysis/ale'
+call vundle#end()
+
+" Setting up fzf plugin
+nnoremap tf :FZF<CR>
+
+" Setting up snippets
+let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
+let g:UltiSnipsExpandTrigger = "<CR>"
+
+" Setting colorscheme
+color jellybeans
+
+" Setting latex
+let g:tex_flavor = "latex"
+
+" Setting completion
+set omnifunc=syntaxcomplete#Complete
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_enable_inlay_hints = 1
+let g:ycm_key_list_select_completion = ['<Tab>']
+let g:ycm_key_list_previous_completion = ['<S-Tab>']
+let g:SuperTabDefaultCompletionType = '<Tab>'
+
+" Setting LSP
+let g:ale_linters = { 'python': ['ruff', ], }
+let g:ale_fixers = { 'python': ['ruff_format', ], }
+let g:ale_python_ruff_options = '--select=ALL --ignore=Q000,ANN101,D101,D100,D103,I001,RUF001,RUF002'
+
+let g:ale_completion_enabled = 1
+
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:ale_virtualtext_cursor = 'disabled'
+
+nnoremap ,f :ALEFix ruff_format<CR>
