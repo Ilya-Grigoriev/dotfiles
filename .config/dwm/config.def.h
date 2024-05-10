@@ -76,9 +76,9 @@ static const char *obsidian[] = { "obsidian", NULL };
 static const char *copyq[] = { "copyq", "clipboard", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
 
-static const char *suspend[] = { "systemctl", "suspend", NULL };
-static const char *reboot[] = { "systemctl", "reboot", NULL };
-static const char *poweroff[] = { "systemctl", "poweroff", NULL };
+static const char *suspend[] = { "loginctl", "suspend", NULL };
+static const char *reboot[] = { "loginctl", "reboot", NULL };
+static const char *poweroff[] = { "loginctl", "poweroff", NULL };
 static const char *logout[] = { "logout_system", NULL };
 
 static const char *volume_mute[] = { "change_volume", "-m", NULL };
