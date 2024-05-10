@@ -99,6 +99,9 @@ then
     (cd /tmp && git clone https://github.com/vim/vim.git && cd vim/src && make && sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
 
     rm -rf /tmp/vim
+
+    vim -c ":PluginInstall" -c "qa!"
+    (cd ~/.vim/bundle/YouCompleteMe && python install.py --clangd-completer)
     echo "Install ended" | lolcat
 fi
 
