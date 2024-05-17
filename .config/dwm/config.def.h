@@ -90,6 +90,8 @@ static const char *brightness_down[] = { "set_brightness", "-d", NULL };
 
 static const char *dwmstatus_restart[] = { "dwmstatus_restart", NULL };
 
+static const char *toggle_grey[] = {"toggle_grey", NULL};
+
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -152,23 +154,24 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
-
 	{ ShiftMask,                    XK_Alt_L,  spawn,          {.v = dwmstatus_restart} },
-    { Mod1Mask,                     XK_Shift_L,spawn,          {.v = dwmstatus_restart} },
+	{ Mod1Mask,                     XK_Shift_L,spawn,          {.v = dwmstatus_restart} },
 
 	{ MODKEY|Mod1Mask,              XK_s,      spawn,          {.v = suspend } },
 	{ MODKEY|Mod1Mask,              XK_r,      spawn,          {.v = reboot } },
 	{ MODKEY|Mod1Mask,              XK_l,      spawn,          {.v = logout } },
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          {.v = poweroff } },
 
-    { 0,                            XF86XK_AudioMute,        spawn, {.v = volume_mute } },
-    { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volume_up} },
-    { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = volume_down} },
+	{ 0,                            XF86XK_AudioMute,        spawn, {.v = volume_mute } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volume_up} },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = volume_down} },
 
 	{ 0,                            XF86XK_MonBrightnessUp,    spawn, {.v = brightness_up} },
 	{ 0,                            XF86XK_MonBrightnessDown,  spawn, {.v = brightness_down} },
 
 	{ MODKEY,                       XK_x,      movecenter,     {0} },
+
+	{ MODKEY,			XK_g,			spawn,	{.v = toggle_grey} },
 };
 
 /* button definitions */ /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */ static const Button buttons[] = {
