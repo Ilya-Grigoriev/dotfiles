@@ -80,6 +80,7 @@ color jellybeans
 
 " Setting latex
 let g:tex_flavor = "latex"
+" setlocal spell
 
 " Setting completion
 set omnifunc=syntaxcomplete#Complete
@@ -90,7 +91,10 @@ let g:ycm_key_list_previous_completion = ['<S-Tab>']
 let g:SuperTabDefaultCompletionType = '<Tab>'
 
 " Setting LSP
-let g:ale_linters = { 'python': ['ruff', ], }
+let g:ale_linters = {
+			\	'python': ['ruff', ],
+			\	'tex': ['texlab' ],
+			\ }
 let g:ale_fixers = { 'python': ['ruff_format', ], }
 let g:ale_python_ruff_options = '--select=ALL --ignore=Q000,ANN101,D101,D100,D103,I001,RUF001,RUF002'
 
@@ -103,3 +107,6 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_virtualtext_cursor = 'disabled'
 
 nnoremap ,f :ALEFix ruff_format<CR>
+
+" Open lazygit
+nnoremap ,gg :terminal ++close lazygit<CR>
