@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, fetchurl, libX11, libXinerama, libXft, writeText, patches ? [ ], conf ? null, stdenv, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -40,11 +40,21 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
+  environment.variables = {
+	  GDK_SCALE = "1";
+#	  GDK_DPI_SCALE = "0.5";
+#	  _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+  };
 
   services.xserver.windowManager.dwm.enable = true;
   services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
-	  src = /home/ilya/.config/dwm;
+          src = /home/ilya/.config/dwm ;
   };
+
+
+
+  services.dwm-status.enable = true;
+  services.dwm-status.order = ["battery" "time"];
 #  services.xserver.windowManager.dwm.package = pkgs.dwm.override {
 #	  patches = [
 #			  (pkgs.fetchpatch {
@@ -94,16 +104,17 @@
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
-       brave
-       tree
-       dmenu
-       st
-       gcc
-       xorg.libX11.dev
-       xorg.libXft
-       xorg.libXinerama
-       flameshot
-       picom
+     vim
+     brave
+     tree
+     dmenu
+     st
+     pkgs.xorg.libX11
+     pkgs.xorg.libXinerama
+     pkgs.xorg.libXft
+     gcc
+     flameshot
+     picom
      ];
    };
 
@@ -153,12 +164,20 @@
 	gh
 	lazygit
 	groff
+
 	bluetuith
 	bluez
 	bluez-tools
+
 	pyenv
 	pipx
 	telegram-desktop
+	home-manager
+	mpd
+	pkgs.xorg.libX11
+	pkgs.xorg.libXinerama
+	pkgs.xorg.libXft
+	gcc
    ];
 # services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
 #	  src = fetchurl {
