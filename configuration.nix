@@ -46,9 +46,14 @@
 #	  _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
   };
 
+  services.xserver.windowManager.awesome.enable = true;
+
   services.xserver.windowManager.dwm.enable = true;
+ # services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
+ #         src = ./dwm ;
+ # };
   services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
-          src = /home/ilya/.config/dwm ;
+	  src = ./dwm; #Place path to DWM source folder (here in my case it is ./dwm)
   };
 
 
@@ -178,7 +183,24 @@
 	pkgs.xorg.libXinerama
 	pkgs.xorg.libXft
 	gcc
+	nsxiv
+	pkgs.neovim
+	texliveMedium
    ];
+
+  fonts.packages = with pkgs; [
+	  noto-fonts
+	  noto-fonts-cjk
+	  noto-fonts-emoji
+	  liberation_ttf
+	  fira-code
+	  fira-code-symbols
+	  mplus-outline-fonts.githubRelease
+	  dina-font
+	  proggyfonts
+	  jetbrains-mono
+	  (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
 # services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
 #	  src = fetchurl {
 #		  url = "https://github.com/ilya-grigoriev/dwm/blob/main/dwm.tar.gz";
