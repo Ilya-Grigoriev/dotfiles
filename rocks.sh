@@ -255,8 +255,8 @@ read yes_or_no
 if [[ $yes_or_no == "yes" ]];
 then
 	echo "Installing dwm..." | lolcat
-    rm -rf ~/.config/dwm
-    rm -rf /tmp/dwm
+	sudo rm -rf ~/.config/dwm
+	sudo rm -rf /tmp/dwm
 	mkdir -p ~/.config/dwm
 
 	git clone https://git.suckless.org/dwm /tmp/dwm/
@@ -265,8 +265,8 @@ then
 	(cd ~/.config/dwm/ && cp config.def.h config.h && sudo make clean install)
 	sudo rm -rf /tmp/dwm
 
-	sudo mkdir -p /usr/share/xsessions
-	sudo bash tools/dwm_xapp.sh
+	# sudo mkdir -p /usr/share/xsessions
+	# sudo bash tools/dwm_xapp.sh
 	echo "dwm installed" | lolcat
 fi
 
